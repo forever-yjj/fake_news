@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head th:replace="_fragments :: head(~{::title})">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>分类</title>
+		<link rel="stylesheet" href="../static/semantic-ui/semantic.min.css" />
+		<link rel="stylesheet" href="../static/css/me.css" />
+	</head>
+	<body>
+		
+	<!-- 导航 -->
+	<nav th:replace="_fragments :: menu(4)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+		<div class="ui container">
+			<div class="ui inverted secondary stackable menu">
+				<h2 class="ui red header item">Fake`News</h2>
+				<a href="#" class="active item m-mobile-hide"><i class="home icon"></i>首页</a>
+				<a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+				<a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>最新</a>
+				<a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>排行</a>
+				<a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+				<div class="right m-item menu m-mobile-hide">
+					<div class="item">
+						<div class="ui icon inverted transparent input">
+							<input type="text" placeholder="输入关键字..." />
+							<i class="search link icon"></i>
+						</div>
+					</div>
+					<div class="right item">
+						<div class="login-register">
+							<a class="ui inverted button">登录</a>
+							<a class="ui inverted button">注册</a>
+						</div>
+					</div>
+					<div class="right m-mobile-hide menu" style="display: none;">
+						<div class="ui dropdown item">
+							<div class="text"><img class="ui avatar image" src="https://unsplash.it/100/100/?image=1008">
+								Jenny Hess
+							</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<a href="#" class="item">个人信息</a>
+								<a href="#" class="item">修改密码</a>
+								<a href="#" class="item">注销</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="#" class="ui menu toggle black button m-right-top m-mobile-show">
+			<i class="sidebar icon"></i>
+		</a>
+	</nav>
+	
+	<!-- 中间内容 -->
+	<div id="waypoint" class="m-container-small m-padded-tb-big">
+		<div class="ui container">
+			<!-- header -->
+			<div class="ui top attached segment">
+				<div class="ui middle aligned two column grid">
+					<div class="column">
+						<h3 class="ui red header">分类</h3>
+					</div>
+					<div class="right aligned column">
+						共 <h3 class="ui orange header m-inline-block m-text-thin" th:text="${#arrays.length(types)}">24</h3>个
+					</div>
+				</div>
+			</div>
+			
+			<div class="ui attached segment m-padded-tb-large">
+				<div class="ui labeled button m-margin-tb-tiny" th:each="type : ${types}">
+					<a href="#" th:href="@{/type/{id}(id=${type.typeId})}" class="ui basic  button" th:classappend="${type.typeId==activeId} ? 'red'" th:text="${type.typeName}">思考与感悟</a>
+					<div class="ui basic  left pointing label" th:classappend="${type.typeId==activeId} ? 'red'" ></div>
+				</div>
+			</div>
+			
+			<div class="ui red segment">
+				<div class="ui padded vertical segment m-padded-tb-large m-padded-lr-clear" th:each="news : ${pageInfo.getList()}">
+					<div class="ui mobile reversed stackable grid">
+						<div class="eleven wide column">
+							<h3 class="ui header">
+								<a href="#" th:href="@{/news/{id}(id=${news.newsId})}" target="_blank" class="m-black" th:text="${news.newsTitle}">
+									外媒：美驻联合国大使克拉夫特取消访台</a></h3>
+							<p class="m-text" th:text="|${news.newsDesc}......|">突发！外媒：美驻联合国大使克拉夫特取消访台</p>
+							<div class="ui stackable grid">
+								<div class="eleven wide column">
+									<div class="ui mini horizontal link list">
+										<div class="item">
+											<img src="https://unsplash.it/100/100/?image=1004" class="ui avatar image" />
+											<div class="content"><a href="#" class="header" th:text="${news.newsSource}">张艺博</a></div>
+										</div>
+										<div class="item">
+											<i class="calendar icon"></i> <span th:text="${#dates.format(news.newsDate,'yyyy-MM-dd')}">2020-04-29</span>
+										</div>
+										<div class="item">
+											<i class="eye icon"></i> <span th:text="${news.newsViews}">321</span>
+										</div>
+										<div class="item">
+											<i class="comment alternate icon"></i><span th:text="${news.newsCommentCount}">321</span>
+										</div>
+									</div>
+								</div>
+								<div class="right aligned five wide column">
+									<a href="#" target="_blank" th:text="${news.type.typeName}" class="ui red basic label m-padded-tiny m-text-thin">国际</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="five wide column">
+							<a href="#" target="_blank">
+								<img th:src="${news.newsImage}" src="https://unsplash.it/800/450/?image=1005" class="ui rounded image" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- footer -->
+			<div class="ui bottom attached segment" th:if="${pageInfo.getTotal()}>1">
+				<div class="ui middle aligned two column grid">
+					<div class="column">
+						<a href="#" th:href="@{/(page=${page}-1)}" th:unless="${pageInfo.isIsFirstPage()}" class="ui mini red basic button">上一页</a>
+					</div>
+					<div class="right aligned column">
+						<div class="column">
+							<a href="#" th:href="@{/(page=${page}+1)}" th:unless="${pageInfo.isIsLastPage()}" class="ui mini red basic button">下一页</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<!-- 侧边工具栏 -->
+	<div id="toolbar" class="animated bounceInRight m-padded m-fixed m-right-bottom" style="display: none;">
+		<div class="ui vertical icon buttons">
+			<a href="#comment-container" class="ui red button">留言</a>
+			<button class="ui wechat icon button"><i class="weixin icon"></i></button>
+			<div id="toTop-button" class="ui icon button"><i class="chevron up icon"></i></div>
+		</div>
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	
+	<!-- 底部foot -->
+	<footer class="ui inverted vertical segment m-padded-tb-massive">
+		<div class="ui center aligned container">
+			<div class="ui inverted divided stackable grid">
+				<div class="three wide column">
+					<div class="ui inverted link list">
+						<div class="item">
+							<img src="static/images/wechat.png" class="ui rounded image " alt="" style="width: 110px;">
+						</div>
+					</div>
+				</div>
+				<div class="three wide column">
+					<h4 class="ui inverted header">最新博客</h4>
+					<div class="ui inverted link list">
+						<a href="#" class="item">用户故事（User Story）</a>
+						<a href="#" class="item">用户故事（User Story）</a>
+						<a href="#" class="item">用户故事（User Story）</a>
+					</div>
+				</div>
+				<div class="three wide column">
+					<h4 class="ui inverted header">联系我</h4>
+					<div class="ui inverted link list">
+						<a href="#" class="item">Email：438216087@qq.com</a>
+						<a href="#" class="item">QQ：438216087</a>
+					</div>
+				</div>
+				<div class="seven wide column">
+					<h4 class="ui inverted header">最新博客</h4>
+					<p>这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+				</div>
+			</div>
+			<div class="ui inverted section divider"></div>
+			<p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020 ZM All Rights Reserved - 豫ICP备20011264号</p>
+		</div>
+	</footer>
+	
+	<script src="../static/js/jquery-3.4.1.min.js"></script>
+	<script src="../static/semantic-ui/semantic.min.js"></script>
+	<script src="../static/plugins/waypoints/jquery.waypoints.min.js" type="text/javascript" ></script>
+	<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+	
+	<script>
+		$('.menu.toggle').click(function(){
+			$('.m-item').toggleClass('m-mobile-hide');
+		});
+		$('#toTop-button').click(function(){
+			$(window).scrollTo(0,500);
+		});
+		
+		var waypoint = new Waypoint({
+		  element: document.getElementById('waypoint'),
+		  handler: function(direction) {
+			if(direction == 'down') {
+				$('#toolbar').show(500);
+			}else {
+				$('#toolbar').hide(500);
+			}
+		    console.log('Scrolled to waypoint!' + direction);
+		  }
+		})
+	</script>
+	</body>
+</html>

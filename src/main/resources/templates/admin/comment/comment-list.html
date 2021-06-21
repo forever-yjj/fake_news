@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>评论列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/layuimini/lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="/layuimini/css/public.css" media="all">
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+
+        <fieldset class="table-search-fieldset">
+            <legend>搜索信息</legend>
+            <div style="margin: 10px 10px 10px 10px">
+                <form class="layui-form layui-form-pane" action="">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">用户姓名</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="nickname" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">新闻标题</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="newsTitle" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">时间</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="commentDate" class="layui-input" id="date-select" placeholder=" - ">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <button type="submit" class="layui-btn layui-btn-primary"  lay-submit lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+
+        <script type="text/html" id="toolbarDemo">
+            <div class="layui-btn-container">
+                <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn" lay-event="delete"> 删除 </button>
+            </div>
+        </script>
+
+        <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+
+        <script type="text/html" id="currentTableBar">
+            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+        </script>
+
+    </div>
+</div>
+<script src="/layuimini/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['form', 'table', 'laydate'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table,
+            laydate = layui.laydate;
+
+        laydate.render({
+            elem: '#date-select'
+            ,range: true
+        });
+
+        //switch 开关模板
+        var statusInput = function (d) { //名字需要和上面定义的名字对应上
+            var isChecked = d.user.userStatus == "0" ?"checked":"";
+            var userId = d.userId;
+            return "<input type='checkbox' name='userStatus' "+ isChecked +"  lay-skin='switch' lay-filter='freeze' lay-text='正常|冻结' value=" + userId + ">";
+        };
+
+        table.render({
+            id: 'userId', //TODO：隐藏域
+            elem: '#currentTableId',
+            url: '[[@{/comment/toCommentList}]]',
+            toolbar: '#toolbarDemo',
+            defaultToolbar: ['filter', 'exports', 'print', {
+                title: '提示',
+                layEvent: 'LAYTABLE_TIPS',
+                icon: 'layui-icon-tips'
+            }],
+            cols: [
+                [
+                    {type: "checkbox", width: 50},
+                    {field: 'commentId', width: 80, title: 'ID', sort: true},
+                    {field: 'news.newsTitle', width: 150, title: '新闻标题', sort: true,
+                        templet: function (d) {
+                            return d.news.newsTitle;
+                        }
+                    },
+                    {field: 'user.nickname', width: 100, title: '评论人', sort: true,
+                        templet: function (d) {
+                            return d.user.nickname;
+                        }
+                    },
+                    {field: 'parentCommentId', width: 100, title: '父评论', sort: true},
+                    {field: 'user.userStatus', width: 110, title: '用户状态', sort: true, templet: statusInput},
+                    {field: 'commentDate', width: 150, title: '评论时间', sort: true},
+                    {field: 'commentContent', title: '评论内容', minWidth: 150},
+                    {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
+                ]
+            ],
+            limits: [10, 15, 20, 25, 50, 100],
+            limit: 15,
+            page: true,
+            skin: 'line'
+        });
+
+        /**
+         * 正常|冻结 开关检测
+         */
+        form.on('switch(freeze)', function (data) {
+            var userId = data.value;
+            var userStatus = this.checked ? '0' : '1';
+
+            var index;
+            $.ajax({
+                type: 'POST',
+                url: '[[@{/user/changeStatus}]]',
+                data: {"userId" :userId,"userStatus":userStatus},
+                beforeSend:function(){
+                    index = layer.msg('正在切换中，请稍候',{icon: 16,time:false,shade:0.8});
+                },
+                error: function(data){
+                    console.log(data);
+                    layer.msg('数据异常，操作失败！', {icon: 5, time: 2000});
+                },
+                success: function(data){
+                    if(data){
+                        setTimeout(function(){
+                            layer.close(index);
+                            layer.msg('操作成功！', {icon: 1, time: 1000});},1000);
+                    }else{
+                        console.log(data);
+                        layer.msg('数据异常，操作失败！', {icon: 5, time: 2000});
+                    }},
+                dataType:'JSON'
+            });
+        });
+
+        // 监听搜索操作
+        form.on('submit(data-search-btn)', function (data) {
+
+            //执行搜索重载
+            table.reload('currentTableId', {
+                where: data.field
+            });
+
+            return false;
+        });
+
+        /**
+         * toolbar监听事件
+         */
+        table.on('toolbar(currentTableFilter)', function (obj) {
+            if (obj.event === 'delete') {  // 监听删除操作
+                var checkStatus = table.checkStatus('currentTableId')
+                    , data = checkStatus.data;
+                layer.alert(JSON.stringify(data));
+            }
+        });
+
+        //监听表格复选框选择
+        table.on('checkbox(currentTableFilter)', function (obj) {
+            console.log(obj)
+        });
+
+        table.on('tool(currentTableFilter)', function (obj) {
+            if (obj.event === 'delete') {
+                layer.confirm('真的删除行么',
+                    function (index) {
+                        $.get("[[@{/comment/removeComment}]]", {'commentId': data.commentId}, function (flag) {
+                            if(flag) {
+                                obj.del();
+                                layer.close(index);
+                                layer.msg("删除成功",{title: false, icon: 1, time: 1000});
+                            }else {
+                                layer.msg("删除失败, 子评论未删除",{title: false, icon: 5, time: 2000});
+                            }
+                        })
+                    });
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>

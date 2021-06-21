@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zm.news.mapper.NewsMapper">
+
+    <!--开启二级缓存,使用Ehcache缓存框架-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <resultMap id="newsMap" type="com.zm.news.entity.News">
+        <id property="newsId" column="news_id" />
+        <result property="newsTitle" column="news_title" />
+        <result property="newsType" column="news_type" />
+        <result property="newsKeyword" column="news_keyword" />
+        <result property="newsContent" column="news_content" />
+        <result property="newsImage" column="news_image" />
+        <result property="newsViews" column="news_views" />
+        <result property="newsEditor" column="news_editor" />
+        <result property="newsDesc" column="news_desc" />
+        <result property="newsSource" column="news_source" />
+        <result property="newsStatus" column="news_status" />
+        <result property="newsDate" column="news_date" />
+        <result property="newsCommentCount" column="news_comment_count" />
+        <!--一对一连接查询：分类-->
+        <association property="type" javaType="com.zm.news.entity.Type" column="news_type" select="com.zm.news.mapper.TypeMapper.findByPrimaryKey" />
+    </resultMap>
+
+
+
+    <select id="findByPrimaryKey" resultMap="newsMap" flushCache="true">
+        select *
+        from n_news where news_id = #{newsId};
+    </select>
+
+    <select id="findByPrimaryKeyNotNull" resultType="News" flushCache="true">
+        select news_id, news_title
+        from n_news where news_id = #{newsId}
+    </select>
+
+    <select id="findByTypeId" parameterType="int" resultMap="newsMap">
+        select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source
+        from n_news where news_type = #{typeId} order by news_date desc
+    </select>
+
+    <select id="findByStatus" parameterType="int" resultMap="newsMap">
+        select news_id, news_title,news_desc,news_image,news_comment_count,news_views,news_type, news_date
+        from n_news where news_status = #{status}
+    </select>
+
+    <select id="findByFuzzy" parameterType="string" resultMap="newsMap">
+        select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source
+        from n_news
+        <where>
+            <if test="keyword != null and keyword != ''">
+                news_title like concat(concat('%', #{keyword}, '%'))
+            </if>
+            <if test="keyword != null and keyword != ''">
+                or news_desc like concat(concat('%', #{keyword}, '%'))
+            </if>
+        </where>
+        order by news_date desc
+    </select>
+
+    <select id="orderByPublishTime" resultMap="newsMap">
+        select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source
+        from n_news where news_status = 1 order by news_date desc
+    </select>
+
+    <select id="orderByViews" resultMap="newsMap">
+        select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source
+        from n_news where news_status = 1 order by news_views desc
+    </select>
+
+    <select id="orderByCommentCount" resultMap="newsMap">
+        select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source
+        from n_news where news_status = 1 order by news_comment_count desc
+    </select>
+
+    <select id="findNewsList" parameterType="News" resultMap="newsMap" flushCache="true">
+        select news_id, news_title, news_type, news_keyword, news_content, news_image, news_views, news_editor, news_desc,
+        news_source, news_status, news_date, news_comment_count
+        from n_news
+        <where>
+            <if test="newsTitle != null and newsTitle != ''">
+                news_title like concat(concat('%', #{newsTitle}, '%'))
+            </if>
+            <if test="newsTitle != null and newsTitle != ''">
+                or news_keyword like concat(concat('%', #{newsTitle}, '%'))
+            </if>
+            <if test="newsType != null and newsType gt 0">
+                and news_type = #{newsType}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insertNews" parameterType="com.zm.news.entity.News" keyProperty="newsId" keyColumn="news_id" useGeneratedKeys="true">
+        insert into n_news (news_title, news_type, news_keyword, news_content, news_image, news_views,
+                            news_editor, news_desc, news_source, news_status, news_date, news_comment_count)
+        values (#{newsTitle}, #{newsType}, #{newsKeyword}, #{newsContent}, #{newsImage}, #{newsViews},
+                            #{newsEditor}, #{newsDesc}, #{newsSource}, #{newsStatus}, #{newsDate}, #{newsCommentCount});
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zm.news.entity.News">
+        update n_news
+        <set>
+            <if test="newsTitle != null and newsTitle != ''">
+                news_title = #{newsTitle},
+            </if>
+            <if test="newsType != null and newsType gt 0">
+                news_type = #{newsType},
+            </if>
+            <if test="newsKeyword != null and newsKeyword != ''">
+                news_keyword = #{newsKeyword},
+            </if>
+            <if test="newsContent != null and newsContent != ''">
+                news_content = #{newsContent},
+            </if>
+            <if test="newsImage != null and newsImage != ''">
+                news_image = #{newsImage},
+            </if>
+            <if test="newsEditor != null and newsEditor != ''">
+                news_editor = #{newsEditor},
+            </if>
+            <if test="newsDesc != null and newsDesc != ''">
+                news_desc = #{newsDesc},
+            </if>
+            <if test="newsSource != null and newsSource != ''">
+                news_source = #{newsSource},
+            </if>
+            <if test="newsStatus != null">
+                news_status = #{newsStatus},
+            </if>
+            <if test="newsDate != null">
+                news_date = #{newsDate},
+            </if>
+            <if test="newsCommentCount != null">
+                news_comment_count = #{newsCommentCount}
+            </if>
+        </set>
+        where news_id = #{newsId};
+    </update>
+
+    <update id="updateViewsById" parameterType="int">
+        update n_news
+        set news_views = #{param2}
+        where news_id = #{param1};
+    </update>
+
+    <update id="updateCommentById" parameterType="int">
+        update n_news
+        set news_comment_count = news_comment_count + 1
+        where news_id = #{id};
+    </update>
+
+
+    <delete id="deleteByPrimaryKey">
+        delete from n_news where news_id = #{newsId};
+    </delete>
+
+    <delete id="deleteByPrimaryKeys" parameterType="list">
+        delete from n_news where news_id in
+        <foreach collection="list" item="item" open="(" separator="," close=")">
+            #{item.newsId}
+        </foreach>
+    </delete>
+
+    <select id="getCount" resultType="int">
+        select count(news_id)
+        from n_news where news_status = 1
+    </select>
+
+</mapper>

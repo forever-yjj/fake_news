@@ -1,0 +1,98 @@
+2021-04-22 16:31:28.648  INFO 272 --- [restartedMain] com.zm.news.NewsApplication              : Starting NewsApplication on Dell-ZM with PID 272 (D:\zhangmiao\work\idea-workspace\news\target\classes started by 43821 in D:\zhangmiao\work\idea-workspace\news)
+2021-04-22 16:31:28.671 DEBUG 272 --- [restartedMain] com.zm.news.NewsApplication              : Running with Spring Boot v2.3.5.RELEASE, Spring v5.2.10.RELEASE
+2021-04-22 16:31:28.672  INFO 272 --- [restartedMain] com.zm.news.NewsApplication              : The following profiles are active: pro
+2021-04-22 16:31:28.800  INFO 272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-22 16:31:28.801  INFO 272 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-22 16:31:31.720  INFO 272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-22 16:31:31.732  INFO 272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2021-04-22 16:31:31.909  INFO 272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 172ms. Found 1 Elasticsearch repository interfaces.
+2021-04-22 16:31:31.914  INFO 272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-22 16:31:31.914  INFO 272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2021-04-22 16:31:31.932  INFO 272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17ms. Found 0 Reactive Elasticsearch repository interfaces.
+2021-04-22 16:31:31.990  INFO 272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-22 16:31:31.992  INFO 272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-22 16:31:32.026  INFO 272 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.zm.news.elasticsearch.NewsRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-04-22 16:31:32.027  INFO 272 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23ms. Found 0 Redis repository interfaces.
+2021-04-22 16:31:32.839  INFO 272 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'springMethodAspect' of type [com.zm.news.config.SpringMethodAspect$$EnhancerBySpringCGLIB$$5b1311f3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-22 16:31:32.933  INFO 272 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-22 16:31:32.941  INFO 272 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-22 16:31:32.943  INFO 272 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-22 16:31:33.788  INFO 272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-22 16:31:33.805  INFO 272 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-22 16:31:33.805  INFO 272 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-04-22 16:31:33.808  INFO 272 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-04-22 16:31:33.808  INFO 272 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-04-22 16:31:33.808  INFO 272 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-04-22 16:31:33.907  INFO 272 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-04-22 16:31:34.127  INFO 272 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-22 16:31:34.127  INFO 272 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5316 ms
+2021-04-22 16:31:35.544  WARN 272 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-22 16:31:35.545  WARN 272 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-22 16:31:35.545  WARN 272 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-22 16:31:35.545  WARN 272 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-22 16:31:35.582  WARN 272 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-22 16:31:35.583  WARN 272 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-22 16:31:35.583  WARN 272 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-22 16:31:35.583  WARN 272 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-22 16:31:37.536  INFO 272 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2021-04-22 16:31:37.537  INFO 272 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Elasticsearch Client in build: 7.6.2
+2021-04-22 16:31:37.537  INFO 272 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Elasticsearch Client used: 7.6.2
+2021-04-22 16:31:37.537  INFO 272 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Elasticsearch cluster: 7.6.2
+2021-04-22 16:31:37.843  INFO 272 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-22 16:31:39.640  INFO 272 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-22 16:31:39.803  INFO 272 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-22 16:31:40.464  INFO 272 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-22 16:31:41.644  INFO 272 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-22 16:31:41.646  INFO 272 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [47.101.200.117:5672]
+2021-04-22 16:31:41.820  INFO 272 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#7bc228fc:0/SimpleConnection@2631a244 [delegate=amqp://fake-news@47.101.200.117:5672//news, localPort= 1109]
+2021-04-22 16:31:41.824  INFO 272 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (spring.gen-KivWrV4yTkqEFMtsdmrnfg) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2021-04-22 16:31:41.824  INFO 272 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (spring.gen-y6Joz5ulSkGFjNZBrvZI5A) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2021-04-22 16:31:41.824  INFO 272 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (spring.gen-Yr1OHbWDQ6i6WzpjNa_irA) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2021-04-22 16:31:42.656  INFO 272 --- [restartedMain] com.zm.news.NewsApplication              : Started NewsApplication in 15.539 seconds (JVM running for 17.869)
+2021-04-22 16:32:10.790  INFO 272 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-22 16:32:10.790  INFO 272 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-22 16:32:10.807  INFO 272 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2021-04-22 16:32:10.903  INFO 272 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-04-22 16:32:10.908  INFO 272 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/', httpMethod='GET', classMethod='com.zm.news.controller.IndexController.index', requestParams={model={}, page=null}}
+2021-04-22 16:32:10.945 DEBUG 272 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-04-22 16:32:11.289  INFO 272 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-04-22 16:32:11.293 DEBUG 272 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper.getCount   : ==>  Preparing: select count(news_id) from n_news where news_status = 1
+2021-04-22 16:32:11.474 DEBUG 272 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper.getCount   : ==> Parameters: 
+2021-04-22 16:32:11.525 DEBUG 272 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper.getCount   : <==      Total: 1
+2021-04-22 16:32:12.975 DEBUG 272 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-04-22 16:32:12.976 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByViews_COUNT    : ==>  Preparing: SELECT count(0) FROM n_news WHERE news_status = 1
+2021-04-22 16:32:12.977 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByViews_COUNT    : ==> Parameters: 
+2021-04-22 16:32:12.978 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByViews_COUNT    : <==      Total: 1
+2021-04-22 16:32:12.980 DEBUG 272 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-04-22 16:32:12.980 DEBUG 272 --- [http-nio-8080-exec-1] c.z.news.mapper.NewsMapper.orderByViews  : ==>  Preparing: select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source from n_news where news_status = 1 order by news_views desc LIMIT ?
+2021-04-22 16:32:12.985 DEBUG 272 --- [http-nio-8080-exec-1] c.z.news.mapper.NewsMapper.orderByViews  : ==> Parameters: 10(Integer)
+2021-04-22 16:32:13.063 DEBUG 272 --- [http-nio-8080-exec-1] c.z.news.mapper.NewsMapper.orderByViews  : <==      Total: 4
+2021-04-22 16:32:13.065 DEBUG 272 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-04-22 16:32:13.065 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.N.orderByCommentCount_COUNT      : ==>  Preparing: SELECT count(0) FROM n_news WHERE news_status = 1
+2021-04-22 16:32:13.066 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.N.orderByCommentCount_COUNT      : ==> Parameters: 
+2021-04-22 16:32:13.067 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.N.orderByCommentCount_COUNT      : <==      Total: 1
+2021-04-22 16:32:13.068 DEBUG 272 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-04-22 16:32:13.068 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByCommentCount   : ==>  Preparing: select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source from n_news where news_status = 1 order by news_comment_count desc LIMIT ?
+2021-04-22 16:32:13.069 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByCommentCount   : ==> Parameters: 8(Integer)
+2021-04-22 16:32:13.075 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByCommentCount   : <==      Total: 4
+2021-04-22 16:32:13.203 DEBUG 272 --- [http-nio-8080-exec-1] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.0
+2021-04-22 16:32:13.204 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.F.findFriendList_COUNT           : ==>  Preparing: SELECT count(0) FROM n_friend
+2021-04-22 16:32:13.204 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.F.findFriendList_COUNT           : ==> Parameters: 
+2021-04-22 16:32:13.208 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.F.findFriendList_COUNT           : <==      Total: 1
+2021-04-22 16:32:13.209 DEBUG 272 --- [http-nio-8080-exec-1] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.0
+2021-04-22 16:32:13.209 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.FriendMapper.findFriendList      : ==>  Preparing: select friend_id, friend_name, website, friend_date from n_friend LIMIT ?
+2021-04-22 16:32:13.210 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.FriendMapper.findFriendList      : ==> Parameters: 4(Integer)
+2021-04-22 16:32:13.213 DEBUG 272 --- [http-nio-8080-exec-1] c.z.n.m.FriendMapper.findFriendList      : <==      Total: 4
+2021-04-22 16:32:13.214  INFO 272 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Return ------ index
+2021-04-22 16:32:13.214  INFO 272 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-04-22 16:32:13.214  INFO 272 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Time Cost            : 2311 ms
+2021-04-22 16:32:30.351  INFO 272 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-04-22 16:32:30.352  INFO 272 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toLogin;jsessionid=6EF7CB6B4D231F452D63AD84B30FE1F6', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toLogin', requestParams={}}
+2021-04-22 16:32:30.353  INFO 272 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Return ------ login
+2021-04-22 16:32:30.353  INFO 272 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-04-22 16:32:30.354  INFO 272 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Time Cost            : 3 ms
+2021-04-22 16:32:30.502  INFO 272 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-04-22 16:32:30.502  INFO 272 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/getVerifyCode', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.getVerificationCode', requestParams={}}
+2021-04-22 16:32:30.940  INFO 272 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Return ------ null
+2021-04-22 16:32:30.940  INFO 272 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-04-22 16:32:30.941  INFO 272 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Time Cost            : 439 ms

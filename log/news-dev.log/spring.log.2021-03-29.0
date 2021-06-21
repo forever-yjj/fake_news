@@ -1,0 +1,862 @@
+2021-03-29 15:03:08.364  INFO 18820 --- [restartedMain] com.zm.news.NewsApplication              : Starting NewsApplication on Dell-ZM with PID 18820 (D:\zhangmiao\work\idea-workspace\news\target\classes started by 43821 in D:\zhangmiao\work\idea-workspace\news)
+2021-03-29 15:03:08.376 DEBUG 18820 --- [restartedMain] com.zm.news.NewsApplication              : Running with Spring Boot v2.3.5.RELEASE, Spring v5.2.10.RELEASE
+2021-03-29 15:03:08.377  INFO 18820 --- [restartedMain] com.zm.news.NewsApplication              : The following profiles are active: pro
+2021-03-29 15:03:08.497  INFO 18820 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-29 15:03:08.498  INFO 18820 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-29 15:03:11.348  INFO 18820 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-29 15:03:11.360  INFO 18820 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2021-03-29 15:03:11.584  INFO 18820 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 201ms. Found 1 Elasticsearch repository interfaces.
+2021-03-29 15:03:11.589  INFO 18820 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-29 15:03:11.590  INFO 18820 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2021-03-29 15:03:11.608  INFO 18820 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 Reactive Elasticsearch repository interfaces.
+2021-03-29 15:03:11.663  INFO 18820 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-29 15:03:11.664  INFO 18820 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-29 15:03:11.696  INFO 18820 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.zm.news.elasticsearch.NewsRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-03-29 15:03:11.696  INFO 18820 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2021-03-29 15:03:12.622  INFO 18820 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'springMethodAspect' of type [com.zm.news.config.SpringMethodAspect$$EnhancerBySpringCGLIB$$5968ef98] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-29 15:03:12.716  INFO 18820 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-29 15:03:12.723  INFO 18820 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-29 15:03:12.725  INFO 18820 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-29 15:03:13.728  INFO 18820 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-29 15:03:13.739  INFO 18820 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-29 15:03:13.740  INFO 18820 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-29 15:03:13.743  INFO 18820 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-03-29 15:03:13.743  INFO 18820 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-29 15:03:13.743  INFO 18820 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-29 15:03:13.835  INFO 18820 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-03-29 15:03:14.066  INFO 18820 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-29 15:03:14.066  INFO 18820 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5562 ms
+2021-03-29 15:03:15.465  WARN 18820 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-29 15:03:15.465  WARN 18820 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-29 15:03:15.466  WARN 18820 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-29 15:03:15.466  WARN 18820 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-29 15:03:15.523  WARN 18820 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-29 15:03:15.523  WARN 18820 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-29 15:03:15.523  WARN 18820 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-29 15:03:15.524  WARN 18820 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-03-29 15:03:17.343  INFO 18820 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2021-03-29 15:03:17.343  INFO 18820 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Elasticsearch Client in build: 7.6.2
+2021-03-29 15:03:17.343  INFO 18820 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Elasticsearch Client used: 7.6.2
+2021-03-29 15:03:17.344  INFO 18820 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Elasticsearch cluster: 7.6.2
+2021-03-29 15:03:17.638  INFO 18820 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-03-29 15:03:19.334  INFO 18820 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-29 15:03:19.511  INFO 18820 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-03-29 15:03:20.226  INFO 18820 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-03-29 15:03:21.500  INFO 18820 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-29 15:03:21.501  INFO 18820 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [47.101.200.117:5672]
+2021-03-29 15:03:21.691  INFO 18820 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#4435f1a1:0/SimpleConnection@7e12c8dc [delegate=amqp://fake-news@47.101.200.117:5672//news, localPort= 1155]
+2021-03-29 15:03:21.695  INFO 18820 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (spring.gen-KyWjLqZRQ8mCYbqY4Z67wQ) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2021-03-29 15:03:21.695  INFO 18820 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (spring.gen-SIwC6FvYQduVFq4DzXIqyw) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2021-03-29 15:03:21.696  INFO 18820 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (spring.gen-GWDTBQd5SU-VPmnpRYnVbg) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2021-03-29 15:03:22.682  INFO 18820 --- [restartedMain] com.zm.news.NewsApplication              : Started NewsApplication in 15.453 seconds (JVM running for 17.328)
+2021-03-29 15:04:09.422  INFO 18820 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-29 15:04:09.422  INFO 18820 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-29 15:04:09.439  INFO 18820 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2021-03-29 15:04:09.531  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:04:09.534  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toAdmin', requestParams={}}
+2021-03-29 15:04:09.535  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Return ------ admin/login
+2021-03-29 15:04:09.536  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:04:09.536  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Time Cost            : 5 ms
+2021-03-29 15:04:11.575  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:04:11.576  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/login', httpMethod='POST', classMethod='com.zm.news.controller.AdminController.login', requestParams={user=User{userId=null, nickname='null', username='admin', password='admin', sex=null, age=null, roleId=null, address='null', userStatus=null, remark='null'}}}
+2021-03-29 15:04:11.620 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.0
+2021-03-29 15:04:11.974  INFO 18820 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-29 15:04:11.978 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.U.findByUsernameAndPassword      : ==>  Preparing: select user_id,username,nickname, role_id from n_user where username = ? and password = ?
+2021-03-29 15:04:12.127 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.U.findByUsernameAndPassword      : ==> Parameters: admin(String), 21232f297a57a5a743894a0e4a801fc3(String)
+2021-03-29 15:04:12.178 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.U.findByUsernameAndPassword      : <==      Total: 1
+2021-03-29 15:04:12.187  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Return ------ true
+2021-03-29 15:04:12.188  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:04:12.188  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Time Cost            : 613 ms
+2021-03-29 15:04:15.431  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:04:15.432  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/index', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toAdmin', requestParams={}}
+2021-03-29 15:04:15.432  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Return ------ admin/index
+2021-03-29 15:04:15.432  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:04:15.432  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 15:04:16.291  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:04:16.292  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toWelcome', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toWelcome', requestParams={model={}}}
+2021-03-29 15:04:16.293 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.0
+2021-03-29 15:04:16.294 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.UserMapper.getCount   : ==>  Preparing: select count(user_id) from n_user where user_status = 0
+2021-03-29 15:04:16.297 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.UserMapper.getCount   : ==> Parameters: 
+2021-03-29 15:04:16.299 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.UserMapper.getCount   : <==      Total: 1
+2021-03-29 15:04:16.300 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-03-29 15:04:16.301 DEBUG 18820 --- [http-nio-8080-exec-2] c.zm.news.mapper.CommentMapper.getCount  : ==>  Preparing: select count(comment_id) from n_comment;
+2021-03-29 15:04:16.301 DEBUG 18820 --- [http-nio-8080-exec-2] c.zm.news.mapper.CommentMapper.getCount  : ==> Parameters: 
+2021-03-29 15:04:16.303 DEBUG 18820 --- [http-nio-8080-exec-2] c.zm.news.mapper.CommentMapper.getCount  : <==      Total: 1
+2021-03-29 15:04:16.304 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-03-29 15:04:16.304 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.NewsMapper.getCount   : ==>  Preparing: select count(news_id) from n_news where news_status = 1
+2021-03-29 15:04:16.305 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.NewsMapper.getCount   : ==> Parameters: 
+2021-03-29 15:04:16.309 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.NewsMapper.getCount   : <==      Total: 1
+2021-03-29 15:04:16.310  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Return ------ admin/welcome
+2021-03-29 15:04:16.310  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:04:16.310  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Time Cost            : 19 ms
+2021-03-29 15:10:12.934  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:12.935  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toUser', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toUser', requestParams={}}
+2021-03-29 15:10:12.935  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Return ------ admin/user/user-list
+2021-03-29 15:10:12.936  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:12.936  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Time Cost            : 2 ms
+2021-03-29 15:10:13.485  INFO 18820 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:13.486  INFO 18820 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/user/toUserList', httpMethod='GET', classMethod='com.zm.news.controller.UserController.toUserList', requestParams={limit=10, page=1, searchParams=null}}
+2021-03-29 15:10:13.552 DEBUG 18820 --- [http-nio-8080-exec-8] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.0
+2021-03-29 15:10:13.559 ERROR 18820 --- [http-nio-8080-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 357246
+2021-03-29 15:10:13.561 ERROR 18820 --- [http-nio-8080-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 361593
+2021-03-29 15:10:13.564 ERROR 18820 --- [http-nio-8080-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 361599
+2021-03-29 15:10:13.566 ERROR 18820 --- [http-nio-8080-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 361607
+2021-03-29 15:10:13.567 ERROR 18820 --- [http-nio-8080-exec-8] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 361628
+2021-03-29 15:10:13.568 DEBUG 18820 --- [http-nio-8080-exec-8] c.z.n.m.UserMapper.findUserList_COUNT    : ==>  Preparing: SELECT count(0) FROM n_user
+2021-03-29 15:10:13.569 DEBUG 18820 --- [http-nio-8080-exec-8] c.z.n.m.UserMapper.findUserList_COUNT    : ==> Parameters: 
+2021-03-29 15:10:13.570 DEBUG 18820 --- [http-nio-8080-exec-8] c.z.n.m.UserMapper.findUserList_COUNT    : <==      Total: 1
+2021-03-29 15:10:13.572 DEBUG 18820 --- [http-nio-8080-exec-8] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.0
+2021-03-29 15:10:13.572 DEBUG 18820 --- [http-nio-8080-exec-8] c.z.news.mapper.UserMapper.findUserList  : ==>  Preparing: select user_id, nickname, username, password, sex, age, role_id, address, user_status, remark from n_user LIMIT ?
+2021-03-29 15:10:13.574 DEBUG 18820 --- [http-nio-8080-exec-8] c.z.news.mapper.UserMapper.findUserList  : ==> Parameters: 10(Integer)
+2021-03-29 15:10:13.583 DEBUG 18820 --- [http-nio-8080-exec-8] c.z.news.mapper.UserMapper.findUserList  : <==      Total: 9
+2021-03-29 15:10:13.584  INFO 18820 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Return ------ {msg=操作成功, code=0, data=Page{count=true, pageNum=1, pageSize=10, startRow=0, endRow=10, total=9, pages=1, reasonable=true, pageSizeZero=false}[User{userId=1, nickname='波波', username='admin', password='21232f297a57a5a743894a0e4a801fc3', sex=0, age=22, roleId=1, address='河南开封', userStatus=0, remark='超级管理员2'}, User{userId=2, nickname='胖胖', username='pangpang', password='25d55ad283aa400af464c76d713c07ad', sex=0, age=22, roleId=0, address='河南开封', userStatus=0, remark='普通用户'}, User{userId=3, nickname='日日', username='riri', password='25d55ad283aa400af464c76d713c07ad', sex=0, age=22, roleId=0, address='河南平顶山', userStatus=0, remark='普通用户'}, User{userId=4, nickname='波波', username='bobo', password='25d55ad283aa400af464c76d713c07ad', sex=1, age=22, roleId=0, address='河南上蔡', userStatus=0, remark='普通用户'}, User{userId=5, nickname='晕晕', username='yunyun', password='25d55ad283aa400af464c76d713c07ad', sex=0, age=22, roleId=0, address='河南永城', userStatus=0, remark='common user'}, User{userId=6, nickname='测试用户', username='aaa', password='25d55ad283aa400af464c76d713c07ad', sex=0, age=22, roleId=0, address='四川成都', userStatus=0, remark='测试信息'}, User{userId=7, nickname='英文', username='yingwen', password='25d55ad283aa400af464c76d713c07ad', sex=0, age=22, roleId=0, address='上海', userStatus=0, remark='测试数据springboot'}, User{userId=8, nickname='妮妮', username='17633504469', password='25d55ad283aa400af464c76d713c07ad', sex=0, age=0, roleId=0, address='null', userStatus=0, remark='null'}, User{userId=9, nickname='yiyi', username='13639855462', password='25d55ad283aa400af464c76d713c07ad', sex=0, age=0, roleId=0, address='null', userStatus=0, remark='null'}], count=9}
+2021-03-29 15:10:13.584  INFO 18820 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:13.584  INFO 18820 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Time Cost            : 99 ms
+2021-03-29 15:10:13.745  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:13.746  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toNews', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toNews', requestParams={}}
+2021-03-29 15:10:13.747  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Return ------ admin/news/news-list
+2021-03-29 15:10:13.747  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:13.747  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Time Cost            : 2 ms
+2021-03-29 15:10:14.206  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:14.207  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/type/typeList', httpMethod='POST', classMethod='com.zm.news.controller.TypeController.typeList', requestParams={}}
+2021-03-29 15:10:14.209 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.0
+2021-03-29 15:10:14.209 DEBUG 18820 --- [http-nio-8080-exec-10] c.z.news.mapper.TypeMapper.findTypeList  : ==>  Preparing: select * from n_type
+2021-03-29 15:10:14.210 DEBUG 18820 --- [http-nio-8080-exec-10] c.z.news.mapper.TypeMapper.findTypeList  : ==> Parameters: 
+2021-03-29 15:10:14.217  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:14.217  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/news/toNewsList', httpMethod='GET', classMethod='com.zm.news.controller.NewsController.toNewsList', requestParams={news=News{newsId=null, newsTitle='null', newsType=null, newsKeyword='null', newsContent='null', newsImage='null', newsViews=null, newsEditor='null', newsDesc='null', newsSource='null', newsStatus=null, newsDate=null, newsCommentCount=null, tagIds='null', type=null, comments=[], typeList=[], tagList=[]}, limit=10, page=1}}
+2021-03-29 15:10:14.221 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-03-29 15:10:14.226 DEBUG 18820 --- [http-nio-8080-exec-10] c.z.news.mapper.TypeMapper.findTypeList  : <==      Total: 18
+2021-03-29 15:10:14.226 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.findNewsList_COUNT    : ==>  Preparing: SELECT count(0) FROM n_news
+2021-03-29 15:10:14.228 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.findNewsList_COUNT    : ==> Parameters: 
+2021-03-29 15:10:14.236 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.findNewsList_COUNT    : <==      Total: 1
+2021-03-29 15:10:14.237 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-03-29 15:10:14.237 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.news.mapper.NewsMapper.findNewsList  : ==>  Preparing: select news_id, news_title, news_type, news_keyword, news_content, news_image, news_views, news_editor, news_desc, news_source, news_status, news_date, news_comment_count from n_news LIMIT ?
+2021-03-29 15:10:14.238  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Return ------ [{"typeId":1,"typeName":"国际","typeDate":"2021-01-25"},{"typeId":2,"typeName":"国内","typeDate":"2021-01-20"},{"typeId":3,"typeName":"科技","typeDate":"2021-01-20"},{"typeId":4,"typeName":"历史","typeDate":"2021-01-20"},{"typeId":5,"typeName":"生活","typeDate":"2021-01-20"},{"typeId":6,"typeName":"情感","typeDate":"2021-01-20"},{"typeId":7,"typeName":"娱乐","typeDate":"2021-01-20"},{"typeId":8,"typeName":"体育","typeDate":"2021-01-20"},{"typeId":9,"typeName":"汽车","typeDate":"2021-01-20"},{"typeId":10,"typeName":"综艺","typeDate":"2021-01-20"},{"typeId":11,"typeName":"旅游","typeDate":"2021-01-20"},{"typeId":12,"typeName":"电竞","typeDate":"2021-01-20"},{"typeId":13,"typeName":"法制","typeDate":"2021-01-20"},{"typeId":14,"typeName":"社会","typeDate":"2021-01-20"},{"typeId":15,"typeName":"人物","typeDate":"2021-01-20"},{"typeId":16,"typeName":"教育","typeDate":"2021-01-20"},{"typeId":17,"typeName":"农业","typeDate":"2021-01-20"},{"typeId":18,"typeName":"健康","typeDate":"2021-01-20"}]
+2021-03-29 15:10:14.238  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:14.238  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Time Cost            : 32 ms
+2021-03-29 15:10:14.238 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.news.mapper.NewsMapper.findNewsList  : ==> Parameters: 10(Integer)
+2021-03-29 15:10:14.337 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.news.mapper.NewsMapper.findNewsList  : <==      Total: 4
+2021-03-29 15:10:14.340 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.0
+2021-03-29 15:10:14.341 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:10:14.341 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 1(Integer)
+2021-03-29 15:10:14.343 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:10:14.354 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.3333333333333333
+2021-03-29 15:10:14.355 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:10:14.355 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 1(Integer)
+2021-03-29 15:10:14.356 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:10:14.357 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.25
+2021-03-29 15:10:14.358 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:10:14.358 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 2(Integer)
+2021-03-29 15:10:14.359 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:10:14.360 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.2
+2021-03-29 15:10:14.361 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:10:14.362 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 3(Integer)
+2021-03-29 15:10:14.366 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:10:14.339  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Return ------ {msg=操作成功, code=0, data=Page{count=true, pageNum=1, pageSize=10, startRow=0, endRow=10, total=4, pages=1, reasonable=true, pageSizeZero=false}[News{newsId=1, newsTitle='特朗普宣布下台', newsType=1, newsKeyword='美国，总统', newsContent='美国时间2月28日，美国前总统特朗普在保守派政治行动会议中发表了他卸任后的第一次演讲。
+
+特朗普在这次演讲中抨击了美国现任总统拜登，并再一次谈及了中美关系。
+
+特朗普自2020年大选失败后，一直坚称2020年的大选的结果存在欺诈行为。对于拜登的登台，特朗普并不服气，他认为在2020年大选中，他是赢了拜登的。[![](https://pics0.baidu.com/feed/e61190ef76c6a7efc80d56b86100b059f2de6603.png?token=2ff0528cca2bf176d3e3b932486d979e&s=BF10E0024997BC906E0C8B930300F09F)](https://pics0.baidu.com/feed/e61190ef76c6a7efc80d56b86100b059f2de6603.png?token=2ff0528cca2bf176d3e3b932486d979e&s=BF10E0024997BC906E0C8B930300F09F)
+
+特朗普在会议上炮轰拜登，称在拜登当上总统以来，美国已经从“美国优先”变成了“美国落后”，并称拜登上任的这一个月是美国最具灾难性的时候。
+
+特朗普表示，拜登在抢自己的功劳，称拜登之前在新冠疫苗的问题上只是在执行特朗普政府还未来的及实施的计划。
+
+在会议中，他对拜登的抗疫政策和重新加入世卫组织的行为进行了批判，也否认了成立一个新党的说法，并且他还对参加2024年的大选进行了暗示。
+
+![](https://pics4.baidu.com/feed/5fdf8db1cb134954d5e0da9ec8b48d50d3094a54.png?token=e421f0474d79b39abcfa5c9fe8d38cd6&s=0300D30578FA1198479D48A70300A002)
+
+特朗普在这场会议中提到了中美关系，仍然是那套“对华强硬”政策。
+
+特朗普认为，拜登对华政策软弱，已经向中国投降，特朗普及其支持者们也借此来抨击拜登。
+
+在会议上，特朗普表示要勇敢地去对抗中国，确保主导世界的是美国，而不是中国。
+
+特朗普在会议上大肆发表反华言论，认为对华强硬才是正确的政治方向。并且，再一次用了“中国病毒”这一说法，并试图借此来增加他的影响力。', newsImage='https://s3.ax1x.com/2020/11/13/DpEHgO.jpg', newsViews=198, newsEditor='黎明', newsDesc='情况不容乐观', newsSource='央视网', newsStatus=1, newsDate=Fri Mar 05 08:40:04 CST 2021, newsCommentCount=8, tagIds='null', type=Type{typeId=1, typeName=国际, typeDate=Mon Jan 25 14:25:57 CST 2021}, comments=[], typeList=[], tagList=[]}, News{newsId=2, newsTitle='拜登就任美国总统 ', newsType=1, newsKeyword='美国总统，拜登', newsContent='1月20日，在美国首都华盛顿国会山，拜登在美国第46任总统就职典礼上发表讲话。新华社记者 刘杰 摄
+
+美国当选总统、民主党人拜登20日在首都华盛顿宣誓就任美国第46任总统。
+
+在国会山举行的就职典礼上，78岁的拜登在联邦最高法院首席法官罗伯茨带领下完成宣誓。他随后发表约20分钟的就职演讲，称美国当前面临着新冠疫情肆虐、社会不平等加剧、系统性种族主义问题、气候变化等一系列危机与挑战。拜登呼吁国家团结，同时表示将打击政治极端主义、白人至上主义和国内恐怖主义。
+
+[![](https://p6.itc.cn/q_70/images03/20210121/2fa47370840d44688fec542ec771c373.jpeg)](https://p6.itc.cn/q_70/images03/20210121/2fa47370840d44688fec542ec771c373.jpeg)
+
+[![](https://p9.itc.cn/q_70/images03/20210121/8e800b7c516e465187d2a6f6b3612605.jpeg)](https://p9.itc.cn/q_70/images03/20210121/8e800b7c516e465187d2a6f6b3612605.jpeg)
+
+美国当选副总统哈里斯当天也宣誓就职，成为美国历史上首位女性副总统。', newsImage='https://p9.itc.cn/q_70/images03/20210121/8e800b7c516e465187d2a6f6b3612605.jpeg', newsViews=7, newsEditor='明明', newsDesc='美国当选总统、民主党人拜登20日在首都华盛顿宣誓就任美国第46任总统。', newsSource='新华网', newsStatus=1, newsDate=Tue Jan 26 16:48:10 CST 2021, newsCommentCount=0, tagIds='null', type=Type{typeId=1, typeName=国际, typeDate=Mon Jan 25 14:25:57 CST 2021}, comments=[], typeList=[], tagList=[]}, News{newsId=3, newsTitle='全国政协十三届四次会议在京开幕', newsType=2, newsKeyword='全国政协', newsContent='同心筑梦共襄复兴伟业，乘势而上开启崭新征程。中国人民政治协商会议第十三届全国委员会第四次会议4日下午在人民大会堂开幕。2100多名全国政协委员将紧紧围绕中共中央决策部署，聚焦“十四五”规划纲要制定和实施，扎实履职尽责、积极建言资政、广泛凝聚共识，汇聚起夺取全面建设社会主义现代化国家新胜利的智慧和力量。
+
+　　全国政协主席汪洋，全国政协副主席张庆黎、刘奇葆、帕巴拉·格列朗杰、董建华、万钢、何厚铧、卢展工、王正伟、马飚、陈晓光、梁振英、夏宝龙、杨传堂、李斌、巴特尔、汪永清、何立峰、苏辉、郑建邦、辜胜阻、刘新成、何维、邵鸿、高云龙在主席台前排就座。
+
+　　党和国家领导人习近平、李克强、栗战书、王沪宁、赵乐际、韩正、王岐山等在主席台就座，祝贺大会召开。
+
+　　全国政协十三届四次会议应出席委员2159人，实到2106人，符合规定人数。
+
+　　下午3时，张庆黎宣布大会开幕，全体起立，奏唱国歌。
+
+　　大会首先审议通过了政协第十三届全国委员会第四次会议议程。
+
+　　汪洋代表政协第十三届全国委员会常务委员会，向大会报告工作。
+
+　　汪洋指出，2020年是新中国历史上极不平凡的一年。在中共中央坚强领导下，政协全国委员会及其常务委员会以习近平新时代中国特色社会主义思想为指导，紧扣统筹疫情防控和经济社会发展认真履职尽责，紧盯社会重大关切加强思想政治引领，紧抓专门协商机构制度建设增强工作效能，为实现“十三五”目标作出了积极贡献，专门协商机构建设展现新风貌，服务中心任务取得新成绩，广大政协委员在特殊年份书写了特殊的“委员作业”。
+
+　　汪洋从5个方面总结了过去一年全国政协的工作。一是深化理论学习，深入开展委员读书活动，进一步筑牢增强“四个意识”、坚定“四个自信”、做到“两个维护”的思想根基。二是深入协商履职，有效运用各种协商形式，发挥网络议政优势，确保在疫情防控常态化条件下履职活动不松、不乱、不断。三是继续完善委员讲堂、重大专项工作委员宣讲团、谈心谈话等载体平台，健全从党内到党外、从委员到界别群众的凝聚共识工作格局，汇聚团结合作正能量。四是完善政协工作制度体系，推动贯彻中央政协工作会议精神走深走实。五是加强自身建设，发挥专门委员会联系界别、服务委员功能，提高政协工作质量和水平。
+
+　　汪洋强调，2021年是中国共产党成立100周年，是开启全面建设社会主义现代化国家新征程的第一年。人民政协要坚持以习近平新时代中国特色社会主义思想为指导，全面贯彻中共十九大和十九届二中、三中、四中、五中全会精神，立足新发展阶段、贯彻新发展理念、构建新发展格局，坚持团结和民主两大主题，围绕中共中央大政方针和决策部署贯彻落实，做好建言资政和凝聚共识工作，以高水平履职服务高质量发展，为“十四五”开好局、起好步集聚众智、汇聚众力。
+
+　　汪洋强调，专门协商机构综合承载政协性质定位，是国家治理体系的有机组成部分，是中国共产党领导中国人民发展社会主义民主、开辟“中国之治”的重要制度设计和独特治理平台。要深入贯彻习近平总书记关于加强和改进人民政协工作的重要思想，全面落实中央政协工作会议精神，加强专门协商机构建设，进一步把人民政协制度优势转化为国家治理效能。要深刻把握专门协商机构的制度优势，不断丰富有事好商量、众人的事情由众人商量的制度化实践。要不断完善专门协商机构工作制度，坚持实践导向，培育协商文化，促进政协协商同其他协商形式的联系配合。要着力提升专门协商机构履职能力，促进委员更好地运用协商规则、掌握沟通方法，知责于心、担责于身、履责于行，更好把报国之志、为民之心和履职之能结合起来，在新征程中展现政协委员的新担当。
+
+　　全国政协副主席辜胜阻代表政协第十三届全国委员会常务委员会，向大会报告政协十三届三次会议以来的提案工作情况。政协委员、政协各参加单位提出提案5974件，立案5044件。提案紧扣时代脉搏、聚焦中心工作、饱含为民情怀，凝结着委员的心血和智慧，承载着广大群众的愿望与期盼。各提案承办单位克服疫情影响，层层压实责任，办复率为99.64%。政协提案工作为服务党和国家事业发展作出积极贡献。
+
+　　在主席台就座的领导同志还有：丁薛祥、王晨、刘鹤、许其亮、孙春兰、李希、李强、李鸿忠、杨洁篪、杨晓渡、张又侠、陈希、陈全国、陈敏尔、胡春华、郭声琨、黄坤明、蔡奇、尤权、曹建明、张春贤、沈跃跃、吉炳轩、艾力更·依明巴海、万鄂湘、陈竺、王东明、白玛赤林、丁仲礼、郝明金、蔡达峰、武维华、魏凤和、王勇、王毅、肖捷、赵克志、周强、张军等。
+
+　　中共中央、全国人大常委会、国务院有关部门负责同志应邀列席开幕会。外国驻华使节等应邀参加开幕会。
+
+　　（总台央视记者 申勇 马立飞 李铮 胡玮 杨松涛 王雪松 郭晗光 石伟明 彭柏闳 章猛 李辉 许永松 许达 王萌萌 杨立峰 段德文）', newsImage='https://pics7.baidu.com/feed/96dda144ad34598237f2725f2f3415a5c9ef84cf.jpeg?token=a94169da96ef788727dcbadc64496a76&s=7CC14A9E4A5244CC1DB731F20300803C', newsViews=null, newsEditor='刘德宾', newsDesc='全国政协十三届四次会议在京开幕', newsSource='央视新闻', newsStatus=1, newsDate=Fri Mar 05 08:42:08 CST 2021, newsCommentCount=null, tagIds='null', type=Type{typeId=2, typeName=国内, typeDate=Wed Jan 20 15:31:27 CST 2021}, comments=[], typeList=[], tagList=[]}, News{newsId=4, newsTitle='SpaceX公司“星舰”再次试飞 软着陆后炸了', newsType=3, newsKeyword='试飞', newsContent='[环球时报综合报道]据美国多家科技媒体3日报道，美国SpaceX公司当天再次试飞了下一代运载器“星舰”的原型试验箭SN10。试验箭在空中飞行后虽然完成软着陆，但几分钟后还是发生爆炸。SN10起飞后飞到距离地面10公里的预定高度，上升过程中依次关掉3台“猛禽”发动机。试验箭于起飞后约6分20秒降落在着陆平台上，没再重复此前试飞中摔在地面爆炸的情况。视频画面显示试验箭似乎略有倾斜，但起初看起来似乎比较顺利。不过着陆几分钟后，试验箭底部发生爆炸。（张祥）', newsImage='https://pics0.baidu.com/feed/d53f8794a4c27d1e860628a226cbb666ddc4385d.jpeg?token=d48d2b2139ca5a940673c6a9c55c76d0&s=1CBAE71542374C2806AD9DCC0300F0B1', newsViews=null, newsEditor='张申', newsDesc='SpaceX公司“星舰”再次试飞，软着陆后炸了', newsSource='环球网', newsStatus=1, newsDate=Fri Mar 05 08:45:05 CST 2021, newsCommentCount=null, tagIds='null', type=Type{typeId=3, typeName=科技, typeDate=Wed Jan 20 15:32:10 CST 2021}, comments=[], typeList=[], tagList=[]}], count=4}
+2021-03-29 15:10:14.367  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:14.367  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Time Cost            : 150 ms
+2021-03-29 15:10:16.010  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:16.010  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toComment', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toComment', requestParams={}}
+2021-03-29 15:10:16.011  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Return ------ admin/comment/comment-list
+2021-03-29 15:10:16.011  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:16.011  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 15:10:16.472  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:16.472  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/comment/toCommentList', httpMethod='GET', classMethod='com.zm.news.controller.CommentController.toCommentList', requestParams={limit=15, comment=Comment{commentId=null, commentContent='null', userId=null, parentCommentId=null, newsId=null, commentDate=null, nickname='null', user=null, news=null, parentComment=null, replyComments=[]}, page=1}}
+2021-03-29 15:10:16.475 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-03-29 15:10:16.476 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.C.findCommentList_COUNT          : ==>  Preparing: SELECT count(0) FROM n_comment
+2021-03-29 15:10:16.478 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.C.findCommentList_COUNT          : ==> Parameters: 
+2021-03-29 15:10:16.480 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.C.findCommentList_COUNT          : <==      Total: 1
+2021-03-29 15:10:16.481 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-03-29 15:10:16.481 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.CommentMapper.findCommentList    : ==>  Preparing: select * from n_comment LIMIT ?
+2021-03-29 15:10:16.482 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.CommentMapper.findCommentList    : ==> Parameters: 15(Integer)
+2021-03-29 15:10:16.490 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.CommentMapper.findCommentList    : <==      Total: 4
+2021-03-29 15:10:16.491 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-03-29 15:10:16.492 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : ==>  Preparing: select news_id, news_title from n_news where news_id = ?
+2021-03-29 15:10:16.496 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : ==> Parameters: 1(Integer)
+2021-03-29 15:10:16.499 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:10:16.501 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.0
+2021-03-29 15:10:16.501 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : ==>  Preparing: select user_id, nickname, user_status from n_user where user_id = ?
+2021-03-29 15:10:16.502 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : ==> Parameters: 9(Integer)
+2021-03-29 15:10:16.503 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:10:16.509 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.2
+2021-03-29 15:10:16.510 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : ==>  Preparing: select news_id, news_title from n_news where news_id = ?
+2021-03-29 15:10:16.511 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : ==> Parameters: 1(Integer)
+2021-03-29 15:10:16.514 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:10:16.515 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.0
+2021-03-29 15:10:16.516 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : ==>  Preparing: select user_id, nickname, user_status from n_user where user_id = ?
+2021-03-29 15:10:16.516 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : ==> Parameters: 8(Integer)
+2021-03-29 15:10:16.517 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:10:16.519 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.3333333333333333
+2021-03-29 15:10:16.519 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : ==>  Preparing: select news_id, news_title from n_news where news_id = ?
+2021-03-29 15:10:16.519 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : ==> Parameters: 1(Integer)
+2021-03-29 15:10:16.520 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:10:16.522 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.0
+2021-03-29 15:10:16.522 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : ==>  Preparing: select user_id, nickname, user_status from n_user where user_id = ?
+2021-03-29 15:10:16.522 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : ==> Parameters: 7(Integer)
+2021-03-29 15:10:16.523 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:10:16.524 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.42857142857142855
+2021-03-29 15:10:16.525 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : ==>  Preparing: select news_id, news_title from n_news where news_id = ?
+2021-03-29 15:10:16.525 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : ==> Parameters: 1(Integer)
+2021-03-29 15:10:16.527 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.N.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:10:16.529 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.125
+2021-03-29 15:10:16.530 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : ==>  Preparing: select user_id, nickname, user_status from n_user where user_id = ?
+2021-03-29 15:10:16.530 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : ==> Parameters: 7(Integer)
+2021-03-29 15:10:16.531 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.U.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:10:16.491  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Return ------ {msg=操作成功, code=0, data=Page{count=true, pageNum=1, pageSize=15, startRow=0, endRow=15, total=4, pages=1, reasonable=true, pageSizeZero=false}[Comment{commentId=14, commentContent='测试一', userId=9, parentCommentId=-1, newsId=1, commentDate=Mon Mar 08 21:43:57 CST 2021, nickname='null', user=User{userId=9, nickname='yiyi', username='null', password='null', sex=null, age=null, roleId=null, address='null', userStatus=0, remark='null'}, news=News{newsId=1, newsTitle='特朗普宣布下台', newsType=null, newsKeyword='null', newsContent='null', newsImage='null', newsViews=null, newsEditor='null', newsDesc='null', newsSource='null', newsStatus=null, newsDate=null, newsCommentCount=null, tagIds='null', type=null, comments=[], typeList=[], tagList=[]}, parentComment=null, replyComments=[]}, Comment{commentId=15, commentContent='测试二', userId=8, parentCommentId=14, newsId=1, commentDate=Mon Mar 08 21:49:45 CST 2021, nickname='null', user=User{userId=8, nickname='妮妮', username='null', password='null', sex=null, age=null, roleId=null, address='null', userStatus=0, remark='null'}, news=News{newsId=1, newsTitle='特朗普宣布下台', newsType=null, newsKeyword='null', newsContent='null', newsImage='null', newsViews=null, newsEditor='null', newsDesc='null', newsSource='null', newsStatus=null, newsDate=null, newsCommentCount=null, tagIds='null', type=null, comments=[], typeList=[], tagList=[]}, parentComment=null, replyComments=[]}, Comment{commentId=16, commentContent='难受', userId=7, parentCommentId=15, newsId=1, commentDate=Mon Mar 08 23:05:48 CST 2021, nickname='null', user=User{userId=7, nickname='英文', username='null', password='null', sex=null, age=null, roleId=null, address='null', userStatus=0, remark='null'}, news=News{newsId=1, newsTitle='特朗普宣布下台', newsType=null, newsKeyword='null', newsContent='null', newsImage='null', newsViews=null, newsEditor='null', newsDesc='null', newsSource='null', newsStatus=null, newsDate=null, newsCommentCount=null, tagIds='null', type=null, comments=[], typeList=[], tagList=[]}, parentComment=null, replyComments=[]}, Comment{commentId=17, commentContent='爱你呦', userId=7, parentCommentId=14, newsId=1, commentDate=Tue Mar 09 08:55:14 CST 2021, nickname='null', user=User{userId=7, nickname='英文', username='null', password='null', sex=null, age=null, roleId=null, address='null', userStatus=0, remark='null'}, news=News{newsId=1, newsTitle='特朗普宣布下台', newsType=null, newsKeyword='null', newsContent='null', newsImage='null', newsViews=null, newsEditor='null', newsDesc='null', newsSource='null', newsStatus=null, newsDate=null, newsCommentCount=null, tagIds='null', type=null, comments=[], typeList=[], tagList=[]}, parentComment=null, replyComments=[]}], count=4}
+2021-03-29 15:10:16.532  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:16.532  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Time Cost            : 60 ms
+2021-03-29 15:10:17.173  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:17.173  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toType', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toType', requestParams={}}
+2021-03-29 15:10:17.173  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Return ------ admin/type/type-list
+2021-03-29 15:10:17.173  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:17.173  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Time Cost            : 0 ms
+2021-03-29 15:10:17.562  INFO 18820 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:17.562  INFO 18820 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/type/toTypeList', httpMethod='GET', classMethod='com.zm.news.controller.TypeController.toTypeList', requestParams={limit=10, page=1, searchParams=null}}
+2021-03-29 15:10:17.563 DEBUG 18820 --- [http-nio-8080-exec-6] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.16666666666666666
+2021-03-29 15:10:17.563 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.m.TypeMapper.findTypeList_COUNT    : ==>  Preparing: SELECT count(0) FROM n_type
+2021-03-29 15:10:17.564 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.m.TypeMapper.findTypeList_COUNT    : ==> Parameters: 
+2021-03-29 15:10:17.565 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.m.TypeMapper.findTypeList_COUNT    : <==      Total: 1
+2021-03-29 15:10:17.567 DEBUG 18820 --- [http-nio-8080-exec-6] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.14285714285714285
+2021-03-29 15:10:17.567 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.news.mapper.TypeMapper.findTypeList  : ==>  Preparing: select * from n_type LIMIT ?
+2021-03-29 15:10:17.568 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.news.mapper.TypeMapper.findTypeList  : ==> Parameters: 10(Integer)
+2021-03-29 15:10:17.570 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.news.mapper.TypeMapper.findTypeList  : <==      Total: 10
+2021-03-29 15:10:17.571  INFO 18820 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Return ------ {msg=操作成功, code=0, data=Page{count=true, pageNum=1, pageSize=10, startRow=0, endRow=10, total=18, pages=2, reasonable=true, pageSizeZero=false}[Type{typeId=1, typeName=国际, typeDate=Mon Jan 25 14:25:57 CST 2021}, Type{typeId=2, typeName=国内, typeDate=Wed Jan 20 15:31:27 CST 2021}, Type{typeId=3, typeName=科技, typeDate=Wed Jan 20 15:32:10 CST 2021}, Type{typeId=4, typeName=历史, typeDate=Wed Jan 20 15:32:22 CST 2021}, Type{typeId=5, typeName=生活, typeDate=Wed Jan 20 15:33:07 CST 2021}, Type{typeId=6, typeName=情感, typeDate=Wed Jan 20 15:33:10 CST 2021}, Type{typeId=7, typeName=娱乐, typeDate=Wed Jan 20 15:33:13 CST 2021}, Type{typeId=8, typeName=体育, typeDate=Wed Jan 20 15:36:34 CST 2021}, Type{typeId=9, typeName=汽车, typeDate=Wed Jan 20 15:36:37 CST 2021}, Type{typeId=10, typeName=综艺, typeDate=Wed Jan 20 15:36:39 CST 2021}], count=18}
+2021-03-29 15:10:17.571  INFO 18820 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:17.571  INFO 18820 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Time Cost            : 9 ms
+2021-03-29 15:10:18.266  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:18.266  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toTag', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toTag', requestParams={}}
+2021-03-29 15:10:18.267  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Return ------ admin/tag/tag-list
+2021-03-29 15:10:18.267  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:18.267  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 15:10:18.678  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:18.679  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/tag/toTagList', httpMethod='GET', classMethod='com.zm.news.controller.TagController.toTagList', requestParams={limit=15, page=1, searchParams=null}}
+2021-03-29 15:10:18.681 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.TagMapper             : Cache Hit Ratio [com.zm.news.mapper.TagMapper]: 0.0
+2021-03-29 15:10:18.681 DEBUG 18820 --- [http-nio-8080-exec-10] c.z.n.m.TagMapper.findTagList_COUNT      : ==>  Preparing: SELECT count(0) FROM n_tag
+2021-03-29 15:10:18.682 DEBUG 18820 --- [http-nio-8080-exec-10] c.z.n.m.TagMapper.findTagList_COUNT      : ==> Parameters: 
+2021-03-29 15:10:18.684 DEBUG 18820 --- [http-nio-8080-exec-10] c.z.n.m.TagMapper.findTagList_COUNT      : <==      Total: 1
+2021-03-29 15:10:18.684 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.TagMapper             : Cache Hit Ratio [com.zm.news.mapper.TagMapper]: 0.0
+2021-03-29 15:10:18.684 DEBUG 18820 --- [http-nio-8080-exec-10] c.zm.news.mapper.TagMapper.findTagList   : ==>  Preparing: select * from n_tag LIMIT ?
+2021-03-29 15:10:18.685 DEBUG 18820 --- [http-nio-8080-exec-10] c.zm.news.mapper.TagMapper.findTagList   : ==> Parameters: 15(Integer)
+2021-03-29 15:10:18.687 DEBUG 18820 --- [http-nio-8080-exec-10] c.zm.news.mapper.TagMapper.findTagList   : <==      Total: 4
+2021-03-29 15:10:18.687  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Return ------ {msg=操作成功, code=0, data=Page{count=true, pageNum=1, pageSize=15, startRow=0, endRow=15, total=4, pages=1, reasonable=true, pageSizeZero=false}[Tag{tagId=1, tagName='神州', tagDate=Mon Jan 25 14:33:13 CST 2021}, Tag{tagId=2, tagName='天宫', tagDate=Wed Jan 20 17:19:25 CST 2021}, Tag{tagId=3, tagName='美国', tagDate=Thu Jan 21 16:33:53 CST 2021}, Tag{tagId=4, tagName='政治', tagDate=Fri Mar 05 08:37:46 CST 2021}], count=4}
+2021-03-29 15:10:18.688  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:18.688  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Time Cost            : 10 ms
+2021-03-29 15:10:19.888  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:19.889  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toFriend', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toFriend', requestParams={}}
+2021-03-29 15:10:19.889  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Return ------ admin/friend/friend-list
+2021-03-29 15:10:19.890  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:19.890  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Time Cost            : 2 ms
+2021-03-29 15:10:20.304  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:20.304  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/friend/toFriendList', httpMethod='GET', classMethod='com.zm.news.controller.FriendController.toFriendList', requestParams={limit=10, friend=Friend{friendId=null, friendName='null', website='null', friendDate=null}, page=1}}
+2021-03-29 15:10:20.307 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.0
+2021-03-29 15:10:20.308 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.F.findFriendByFuzzy_COUNT        : ==>  Preparing: SELECT count(0) FROM n_friend
+2021-03-29 15:10:20.309 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.F.findFriendByFuzzy_COUNT        : ==> Parameters: 
+2021-03-29 15:10:20.311 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.F.findFriendByFuzzy_COUNT        : <==      Total: 1
+2021-03-29 15:10:20.312 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.0
+2021-03-29 15:10:20.312 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.FriendMapper.findFriendByFuzzy   : ==>  Preparing: select friend_id, friend_name, website, friend_date from n_friend LIMIT ?
+2021-03-29 15:10:20.313 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.FriendMapper.findFriendByFuzzy   : ==> Parameters: 10(Integer)
+2021-03-29 15:10:20.315 DEBUG 18820 --- [http-nio-8080-exec-1] c.z.n.m.FriendMapper.findFriendByFuzzy   : <==      Total: 4
+2021-03-29 15:10:20.315  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Return ------ {msg=操作成功, code=0, data=Page{count=true, pageNum=1, pageSize=10, startRow=0, endRow=10, total=4, pages=1, reasonable=true, pageSizeZero=false}[Friend{friendId=1, friendName='百度', website='www.baidu.com', friendDate=Fri Mar 12 16:31:05 CST 2021}, Friend{friendId=2, friendName='B站', website='www.bilibili.com', friendDate=Fri Mar 12 16:59:51 CST 2021}, Friend{friendId=3, friendName='fake`news', website='localhost:8080/admin/index', friendDate=Fri Mar 12 17:00:42 CST 2021}, Friend{friendId=4, friendName='NO视频', website='www.novipnoad.com', friendDate=Fri Mar 12 17:01:16 CST 2021}], count=4}
+2021-03-29 15:10:20.316  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:20.316  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Time Cost            : 12 ms
+2021-03-29 15:10:21.587  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:21.587  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toStatics', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toStatics', requestParams={}}
+2021-03-29 15:10:21.587  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Return ------ admin/statics/statics-list
+2021-03-29 15:10:21.587  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:21.587  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Time Cost            : 0 ms
+2021-03-29 15:10:21.956  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:10:21.956  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/statics/toStaticsList', httpMethod='GET', classMethod='com.zm.news.controller.StaticsController.toStaticsList', requestParams={limit=15, page=1, type=null, statistics=Statistics{id=null, ip='null', requestCount=null, requestDate=null, location=null}}}
+2021-03-29 15:10:22.000 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.S.findByParams_COUNT             : ==>  Preparing: SELECT count(0) FROM n_statistics
+2021-03-29 15:10:22.000 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.S.findByParams_COUNT             : ==> Parameters: 
+2021-03-29 15:10:22.002 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.S.findByParams_COUNT             : <==      Total: 1
+2021-03-29 15:10:22.002 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.StatisticsMapper.findByParams    : ==>  Preparing: select id, ip, request_count, request_date, location from n_statistics LIMIT ?
+2021-03-29 15:10:22.003 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.StatisticsMapper.findByParams    : ==> Parameters: 15(Integer)
+2021-03-29 15:10:22.004 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.StatisticsMapper.findByParams    : <==      Total: 1
+2021-03-29 15:10:22.006  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Return ------ {msg=操作成功, code=0, data=Page{count=true, pageNum=1, pageSize=15, startRow=0, endRow=15, total=1, pages=1, reasonable=true, pageSizeZero=false}[Statistics{id=1, ip='0:0:0:0:0:0:0:1', requestCount=2, requestDate=Wed Feb 03 08:00:00 CST 2021, location=2}], count=1}
+2021-03-29 15:10:22.006  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:10:22.006  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Time Cost            : 50 ms
+2021-03-29 15:20:37.309  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:20:37.310  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/', httpMethod='GET', classMethod='com.zm.news.controller.IndexController.index', requestParams={model={}, page=null}}
+2021-03-29 15:20:37.311 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.375
+2021-03-29 15:20:37.312 ERROR 18820 --- [http-nio-8080-exec-5] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 615309
+2021-03-29 15:20:37.314 ERROR 18820 --- [http-nio-8080-exec-5] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 623097
+2021-03-29 15:20:37.320 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper.getCount   : ==>  Preparing: select count(news_id) from n_news where news_status = 1
+2021-03-29 15:20:37.321 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper.getCount   : ==> Parameters: 
+2021-03-29 15:20:37.323 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper.getCount   : <==      Total: 1
+2021-03-29 15:20:38.701 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.3333333333333333
+2021-03-29 15:20:38.701 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.NewsMapper.orderByViews_COUNT    : ==>  Preparing: SELECT count(0) FROM n_news WHERE news_status = 1
+2021-03-29 15:20:38.702 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.NewsMapper.orderByViews_COUNT    : ==> Parameters: 
+2021-03-29 15:20:38.703 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.NewsMapper.orderByViews_COUNT    : <==      Total: 1
+2021-03-29 15:20:38.704 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.3
+2021-03-29 15:20:38.704 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.news.mapper.NewsMapper.orderByViews  : ==>  Preparing: select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source from n_news where news_status = 1 order by news_views desc LIMIT ?
+2021-03-29 15:20:38.707 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.news.mapper.NewsMapper.orderByViews  : ==> Parameters: 10(Integer)
+2021-03-29 15:20:38.710 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.news.mapper.NewsMapper.orderByViews  : <==      Total: 4
+2021-03-29 15:20:38.712 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.2727272727272727
+2021-03-29 15:20:38.713 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.N.orderByCommentCount_COUNT      : ==>  Preparing: SELECT count(0) FROM n_news WHERE news_status = 1
+2021-03-29 15:20:38.713 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.N.orderByCommentCount_COUNT      : ==> Parameters: 
+2021-03-29 15:20:38.715 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.N.orderByCommentCount_COUNT      : <==      Total: 1
+2021-03-29 15:20:38.716 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.25
+2021-03-29 15:20:38.717 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.NewsMapper.orderByCommentCount   : ==>  Preparing: select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source from n_news where news_status = 1 order by news_comment_count desc LIMIT ?
+2021-03-29 15:20:38.719 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.NewsMapper.orderByCommentCount   : ==> Parameters: 8(Integer)
+2021-03-29 15:20:38.723 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.NewsMapper.orderByCommentCount   : <==      Total: 4
+2021-03-29 15:20:38.814 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.0
+2021-03-29 15:20:38.815 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.F.findFriendList_COUNT           : ==>  Preparing: SELECT count(0) FROM n_friend
+2021-03-29 15:20:38.815 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.F.findFriendList_COUNT           : ==> Parameters: 
+2021-03-29 15:20:38.817 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.F.findFriendList_COUNT           : <==      Total: 1
+2021-03-29 15:20:38.818 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.0
+2021-03-29 15:20:38.818 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.FriendMapper.findFriendList      : ==>  Preparing: select friend_id, friend_name, website, friend_date from n_friend LIMIT ?
+2021-03-29 15:20:38.818 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.FriendMapper.findFriendList      : ==> Parameters: 4(Integer)
+2021-03-29 15:20:38.821 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.FriendMapper.findFriendList      : <==      Total: 4
+2021-03-29 15:20:38.822  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Return ------ index
+2021-03-29 15:20:38.822  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:20:38.822  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Time Cost            : 1513 ms
+2021-03-29 15:20:45.454  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:20:45.454  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toLogin', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toLogin', requestParams={}}
+2021-03-29 15:20:45.455  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Return ------ login
+2021-03-29 15:20:45.455  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:20:45.455  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 15:20:45.590  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:20:45.590  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/getVerifyCode', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.getVerificationCode', requestParams={}}
+2021-03-29 15:20:46.050  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Return ------ null
+2021-03-29 15:20:46.050  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:20:46.050  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Time Cost            : 460 ms
+2021-03-29 15:20:50.565  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:20:50.565  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toRegister', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toRegister', requestParams={}}
+2021-03-29 15:20:50.565  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Return ------ register
+2021-03-29 15:20:50.566  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:20:50.566  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 15:25:24.752  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:25:24.752  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toRegister', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toRegister', requestParams={}}
+2021-03-29 15:25:24.753  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Return ------ register
+2021-03-29 15:25:24.753  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:25:24.753  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 15:25:46.728  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:25:46.728  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/', httpMethod='GET', classMethod='com.zm.news.controller.IndexController.index', requestParams={model={}, page=null}}
+2021-03-29 15:25:46.728 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.3076923076923077
+2021-03-29 15:25:46.733 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.35714285714285715
+2021-03-29 15:25:46.734 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.4
+2021-03-29 15:25:46.736 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.4375
+2021-03-29 15:25:46.736 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.47058823529411764
+2021-03-29 15:25:46.746 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.2
+2021-03-29 15:25:46.747 DEBUG 18820 --- [http-nio-8080-exec-1] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.3333333333333333
+2021-03-29 15:25:46.747  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Return ------ index
+2021-03-29 15:25:46.748  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:25:46.748  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Time Cost            : 20 ms
+2021-03-29 15:25:48.151  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:25:48.151  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toLogin', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toLogin', requestParams={}}
+2021-03-29 15:25:48.151  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Return ------ login
+2021-03-29 15:25:48.151  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:25:48.151  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Time Cost            : 0 ms
+2021-03-29 15:25:48.240  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:25:48.240  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/getVerifyCode', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.getVerificationCode', requestParams={}}
+2021-03-29 15:25:48.269  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Return ------ null
+2021-03-29 15:25:48.270  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:25:48.270  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Time Cost            : 30 ms
+2021-03-29 15:25:49.498  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:25:49.498  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toRegister', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toRegister', requestParams={}}
+2021-03-29 15:25:49.498  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Return ------ register
+2021-03-29 15:25:49.498  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:25:49.498  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Time Cost            : 0 ms
+2021-03-29 15:27:19.801  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:27:19.802  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toLogin', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toLogin', requestParams={}}
+2021-03-29 15:27:19.802  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Return ------ login
+2021-03-29 15:27:19.803  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:27:19.803  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Time Cost            : 2 ms
+2021-03-29 15:27:19.910  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:27:19.911  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/getVerifyCode', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.getVerificationCode', requestParams={}}
+2021-03-29 15:27:19.934  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Return ------ null
+2021-03-29 15:27:19.934  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:27:19.934  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Time Cost            : 24 ms
+2021-03-29 15:27:22.010  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:27:22.010  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toRegister', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toRegister', requestParams={}}
+2021-03-29 15:27:22.010  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Return ------ register
+2021-03-29 15:27:22.010  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:27:22.010  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Time Cost            : 0 ms
+2021-03-29 15:27:23.143  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:27:23.144  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toLogin', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toLogin', requestParams={}}
+2021-03-29 15:27:23.144  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Return ------ login
+2021-03-29 15:27:23.144  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:27:23.144  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 15:27:23.243  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:27:23.243  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/getVerifyCode', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.getVerificationCode', requestParams={}}
+2021-03-29 15:27:23.262  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Return ------ null
+2021-03-29 15:27:23.262  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:27:23.262  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Time Cost            : 19 ms
+2021-03-29 15:29:22.214  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:29:22.215  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/', httpMethod='GET', classMethod='com.zm.news.controller.IndexController.index', requestParams={model={}, page=null}}
+2021-03-29 15:29:22.215 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.5
+2021-03-29 15:29:22.219 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.5263157894736842
+2021-03-29 15:29:22.220 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.55
+2021-03-29 15:29:22.225 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.5714285714285714
+2021-03-29 15:29:22.225 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.5909090909090909
+2021-03-29 15:29:22.240 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.42857142857142855
+2021-03-29 15:29:22.241 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.5
+2021-03-29 15:29:22.241  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Return ------ index
+2021-03-29 15:29:22.241  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:29:22.241  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Time Cost            : 27 ms
+2021-03-29 15:36:18.767  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:36:18.767  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/news/2', httpMethod='GET', classMethod='com.zm.news.controller.NewsController.newsById', requestParams={model={}, id=2}}
+2021-03-29 15:36:18.771 DEBUG 18820 --- [http-nio-8080-exec-7] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.5652173913043478
+2021-03-29 15:36:18.773 ERROR 18820 --- [http-nio-8080-exec-7] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 939953
+2021-03-29 15:36:18.778 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.m.NewsMapper.findByPrimaryKey      : ==>  Preparing: select * from n_news where news_id = ?;
+2021-03-29 15:36:18.779 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.m.NewsMapper.findByPrimaryKey      : ==> Parameters: 2(Integer)
+2021-03-29 15:36:18.782 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.m.NewsMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:36:18.787 DEBUG 18820 --- [http-nio-8080-exec-7] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.125
+2021-03-29 15:36:18.787 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.news.mapper.TypeMapper.findTypeList  : ==>  Preparing: select * from n_type
+2021-03-29 15:36:18.788 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.news.mapper.TypeMapper.findTypeList  : ==> Parameters: 
+2021-03-29 15:36:18.792 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.news.mapper.TypeMapper.findTypeList  : <==      Total: 18
+2021-03-29 15:36:18.793 DEBUG 18820 --- [http-nio-8080-exec-7] com.zm.news.mapper.TagMapper             : Cache Hit Ratio [com.zm.news.mapper.TagMapper]: 0.0
+2021-03-29 15:36:18.793 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.mapper.TagMapper.findTagByNewsId   : ==>  Preparing: select tag_id, tag_name from n_tag where tag_id in (select n_news_tag.tag_id from n_news_tag where news_id = ?);
+2021-03-29 15:36:18.796 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.mapper.TagMapper.findTagByNewsId   : ==> Parameters: 2(Integer)
+2021-03-29 15:36:18.798 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.mapper.TagMapper.findTagByNewsId   : <==      Total: 1
+2021-03-29 15:36:18.803  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Return ------ view/news
+2021-03-29 15:36:18.803  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:36:18.803  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Time Cost            : 36 ms
+2021-03-29 15:36:18.875 DEBUG 18820 --- [http-nio-8080-exec-7] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.1111111111111111
+2021-03-29 15:36:18.876 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:36:18.876 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 1(Integer)
+2021-03-29 15:36:18.878 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:36:20.004  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:36:20.005  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/comment/2', httpMethod='GET', classMethod='com.zm.news.controller.CommentController.comment', requestParams={model={}, id=2}}
+2021-03-29 15:36:20.005 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-03-29 15:36:20.006 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.C.findByNewsIdAndParentId        : ==>  Preparing: select * from n_comment where news_id = ? and parent_comment_id =? order by comment_date desc;
+2021-03-29 15:36:20.007 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.C.findByNewsIdAndParentId        : ==> Parameters: 2(Integer), -1(Integer)
+2021-03-29 15:36:20.008 DEBUG 18820 --- [http-nio-8080-exec-4] c.z.n.m.C.findByNewsIdAndParentId        : <==      Total: 0
+2021-03-29 15:36:20.010  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Return ------ view/news :: commentList
+2021-03-29 15:36:20.010  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:36:20.010  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Time Cost            : 6 ms
+2021-03-29 15:36:24.731  INFO 18820 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:36:24.731  INFO 18820 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/news/1', httpMethod='GET', classMethod='com.zm.news.controller.NewsController.newsById', requestParams={model={}, id=1}}
+2021-03-29 15:36:24.736 DEBUG 18820 --- [http-nio-8080-exec-6] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.5416666666666666
+2021-03-29 15:36:24.736 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.m.NewsMapper.findByPrimaryKey      : ==>  Preparing: select * from n_news where news_id = ?;
+2021-03-29 15:36:24.737 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.m.NewsMapper.findByPrimaryKey      : ==> Parameters: 1(Integer)
+2021-03-29 15:36:24.738 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.m.NewsMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:36:24.742 DEBUG 18820 --- [http-nio-8080-exec-6] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.1
+2021-03-29 15:36:24.743 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.news.mapper.TypeMapper.findTypeList  : ==>  Preparing: select * from n_type
+2021-03-29 15:36:24.743 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.news.mapper.TypeMapper.findTypeList  : ==> Parameters: 
+2021-03-29 15:36:24.745 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.news.mapper.TypeMapper.findTypeList  : <==      Total: 18
+2021-03-29 15:36:24.746 DEBUG 18820 --- [http-nio-8080-exec-6] com.zm.news.mapper.TagMapper             : Cache Hit Ratio [com.zm.news.mapper.TagMapper]: 0.0
+2021-03-29 15:36:24.746 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.mapper.TagMapper.findTagByNewsId   : ==>  Preparing: select tag_id, tag_name from n_tag where tag_id in (select n_news_tag.tag_id from n_news_tag where news_id = ?);
+2021-03-29 15:36:24.747 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.mapper.TagMapper.findTagByNewsId   : ==> Parameters: 1(Integer)
+2021-03-29 15:36:24.749 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.mapper.TagMapper.findTagByNewsId   : <==      Total: 2
+2021-03-29 15:36:24.751  INFO 18820 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Return ------ view/news
+2021-03-29 15:36:24.751  INFO 18820 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:36:24.751  INFO 18820 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Time Cost            : 20 ms
+2021-03-29 15:36:24.756 DEBUG 18820 --- [http-nio-8080-exec-6] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.18181818181818182
+2021-03-29 15:36:24.756 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:36:24.756 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 1(Integer)
+2021-03-29 15:36:24.758 DEBUG 18820 --- [http-nio-8080-exec-6] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:36:25.729  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:36:25.729  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/comment/1', httpMethod='GET', classMethod='com.zm.news.controller.CommentController.comment', requestParams={model={}, id=1}}
+2021-03-29 15:36:25.729 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-03-29 15:36:25.730 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.C.findByNewsIdAndParentId        : ==>  Preparing: select * from n_comment where news_id = ? and parent_comment_id =? order by comment_date desc;
+2021-03-29 15:36:25.730 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.C.findByNewsIdAndParentId        : ==> Parameters: 1(Integer), -1(Integer)
+2021-03-29 15:36:25.732 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.C.findByNewsIdAndParentId        : <==      Total: 1
+2021-03-29 15:36:25.734 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.1111111111111111
+2021-03-29 15:36:25.734 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : ==>  Preparing: select user_id, nickname, user_status from n_user where user_id = ?
+2021-03-29 15:36:25.735 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : ==> Parameters: 9(Integer)
+2021-03-29 15:36:25.737 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:36:25.738 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-03-29 15:36:25.738 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.C.findByNewsIdAndParentId        : ==>  Preparing: select * from n_comment where news_id = ? and parent_comment_id =? order by comment_date desc;
+2021-03-29 15:36:25.738 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.C.findByNewsIdAndParentId        : ==> Parameters: 1(Integer), 14(Integer)
+2021-03-29 15:36:25.741 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.C.findByNewsIdAndParentId        : <==      Total: 2
+2021-03-29 15:36:25.743 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.1
+2021-03-29 15:36:25.743 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : ==>  Preparing: select user_id, nickname, user_status from n_user where user_id = ?
+2021-03-29 15:36:25.744 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : ==> Parameters: 7(Integer)
+2021-03-29 15:36:25.745 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:36:25.747 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-03-29 15:36:25.748 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.CommentMapper.findSecondLevel    : ==>  Preparing: select * from n_comment where news_id = ? and parent_comment_id =? order by comment_date desc;
+2021-03-29 15:36:25.748 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.CommentMapper.findSecondLevel    : ==> Parameters: 1(Integer), 17(Integer)
+2021-03-29 15:36:25.749 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.CommentMapper.findSecondLevel    : <==      Total: 0
+2021-03-29 15:36:25.750 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.09090909090909091
+2021-03-29 15:36:25.750 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : ==>  Preparing: select user_id, nickname, user_status from n_user where user_id = ?
+2021-03-29 15:36:25.750 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : ==> Parameters: 8(Integer)
+2021-03-29 15:36:25.751 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:36:25.753 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-03-29 15:36:25.753 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.CommentMapper.findSecondLevel    : ==>  Preparing: select * from n_comment where news_id = ? and parent_comment_id =? order by comment_date desc;
+2021-03-29 15:36:25.753 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.CommentMapper.findSecondLevel    : ==> Parameters: 1(Integer), 15(Integer)
+2021-03-29 15:36:25.754 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.CommentMapper.findSecondLevel    : <==      Total: 1
+2021-03-29 15:36:25.756 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.08333333333333333
+2021-03-29 15:36:25.756 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : ==>  Preparing: select user_id, nickname, user_status from n_user where user_id = ?
+2021-03-29 15:36:25.757 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : ==> Parameters: 7(Integer)
+2021-03-29 15:36:25.758 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.U.findByPrimaryKeyNotNull        : <==      Total: 1
+2021-03-29 15:36:25.759 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-03-29 15:36:25.759 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.CommentMapper.findSecondLevel    : ==>  Preparing: select * from n_comment where news_id = ? and parent_comment_id =? order by comment_date desc;
+2021-03-29 15:36:25.759 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.CommentMapper.findSecondLevel    : ==> Parameters: 1(Integer), 16(Integer)
+2021-03-29 15:36:25.760 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.CommentMapper.findSecondLevel    : <==      Total: 0
+2021-03-29 15:36:25.760  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Return ------ view/news :: commentList
+2021-03-29 15:36:25.760  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:36:25.760  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Time Cost            : 31 ms
+2021-03-29 15:41:29.412  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:41:29.413  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/search', httpMethod='POST', classMethod='com.zm.news.controller.IndexController.search', requestParams={query=特梁普, model={}, page=1}}
+2021-03-29 15:41:34.658  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:41:34.716 ERROR 18820 --- [http-nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+java.net.SocketTimeoutException: 5,000 milliseconds timeout on connection http-outgoing-0 [ACTIVE]
+	at org.elasticsearch.client.RestClient.extractAndWrapCause(RestClient.java:808)
+	at org.elasticsearch.client.RestClient.performRequest(RestClient.java:248)
+	at org.elasticsearch.client.RestClient.performRequest(RestClient.java:235)
+	at org.elasticsearch.client.RestHighLevelClient.internalPerformRequest(RestHighLevelClient.java:1514)
+	at org.elasticsearch.client.RestHighLevelClient.performRequest(RestHighLevelClient.java:1484)
+	at org.elasticsearch.client.RestHighLevelClient.performRequestAndParseEntity(RestHighLevelClient.java:1454)
+	at org.elasticsearch.client.RestHighLevelClient.search(RestHighLevelClient.java:970)
+	at com.zm.news.service.impl.NewsServiceImpl.getEsDocCount(NewsServiceImpl.java:152)
+	at com.zm.news.service.impl.NewsServiceImpl.fuzzyQuery(NewsServiceImpl.java:106)
+	at com.zm.news.controller.IndexController.search(IndexController.java:64)
+	at com.zm.news.controller.IndexController$$FastClassBySpringCGLIB$$53b75069.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:47)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.zm.news.aspect.LogAspect.doAround(LogAspect.java:60)
+	at sun.reflect.GeneratedMethodAccessor106.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at com.alibaba.druid.support.spring.stat.DruidStatInterceptor.invoke(DruidStatInterceptor.java:73)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.zm.news.controller.IndexController$$EnhancerBySpringCGLIB$$4f155cc3.search(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: 5,000 milliseconds timeout on connection http-outgoing-0 [ACTIVE]
+	at org.apache.http.nio.protocol.HttpAsyncRequestExecutor.timeout(HttpAsyncRequestExecutor.java:387)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onTimeout(InternalIODispatch.java:92)
+	at org.apache.http.impl.nio.client.InternalIODispatch.onTimeout(InternalIODispatch.java:39)
+	at org.apache.http.impl.nio.reactor.AbstractIODispatch.timeout(AbstractIODispatch.java:175)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.sessionTimedOut(BaseIOReactor.java:261)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.timeoutCheck(AbstractIOReactor.java:502)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.validate(BaseIOReactor.java:211)
+	at org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:280)
+	at org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
+	at org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+	... 1 common frames omitted
+
+2021-03-29 15:42:48.294  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:42:48.294  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/resetEs', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.resetEs', requestParams={}}
+2021-03-29 15:42:48.524 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.52
+2021-03-29 15:42:48.525 ERROR 18820 --- [http-nio-8080-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 382765
+2021-03-29 15:42:48.530 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.news.mapper.NewsMapper.findByStatus  : ==>  Preparing: select news_id, news_title,news_desc,news_image,news_comment_count,news_views,news_type, news_date from n_news where news_status = ?
+2021-03-29 15:42:48.531 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.news.mapper.NewsMapper.findByStatus  : ==> Parameters: 1(Integer)
+2021-03-29 15:42:48.537 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.news.mapper.NewsMapper.findByStatus  : <==      Total: 4
+2021-03-29 15:42:49.241  WARN 18820 --- [http-nio-8080-exec-3] com.zm.news.controller.AdminController   : 【ElasticSearch】结束保存文章数据到ES，程序运行时间：947ms
+2021-03-29 15:42:49.247  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Return ------ true
+2021-03-29 15:42:49.247  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:42:49.247  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Time Cost            : 953 ms
+2021-03-29 15:42:54.975  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:42:54.975  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toLogin', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toLogin', requestParams={}}
+2021-03-29 15:42:54.975  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Return ------ login
+2021-03-29 15:42:54.975  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:42:54.975  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Time Cost            : 0 ms
+2021-03-29 15:42:55.075  INFO 18820 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:42:55.075  INFO 18820 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/getVerifyCode', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.getVerificationCode', requestParams={}}
+2021-03-29 15:42:55.100  INFO 18820 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Return ------ null
+2021-03-29 15:42:55.100  INFO 18820 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:42:55.101  INFO 18820 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Time Cost            : 26 ms
+2021-03-29 15:42:58.415  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:42:58.416  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/search', httpMethod='POST', classMethod='com.zm.news.controller.IndexController.search', requestParams={query=特梁普, model={}, page=1}}
+2021-03-29 15:42:59.088 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.25
+2021-03-29 15:42:59.088 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:42:59.089 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 1(Integer)
+2021-03-29 15:42:59.097 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:42:59.098  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Return ------ view/search
+2021-03-29 15:42:59.098  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:42:59.098  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Time Cost            : 683 ms
+2021-03-29 15:43:12.242  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:43:12.242  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toLogin', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toLogin', requestParams={}}
+2021-03-29 15:43:12.243  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Return ------ login
+2021-03-29 15:43:12.243  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:43:12.243  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 15:43:12.354  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:43:12.355  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/getVerifyCode', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.getVerificationCode', requestParams={}}
+2021-03-29 15:43:12.390  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Return ------ null
+2021-03-29 15:43:12.390  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:43:12.390  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Time Cost            : 36 ms
+2021-03-29 15:43:16.089  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:43:16.090  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/search', httpMethod='POST', classMethod='com.zm.news.controller.IndexController.search', requestParams={query=美国, model={}, page=1}}
+2021-03-29 15:43:16.178 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.3076923076923077
+2021-03-29 15:43:16.178 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:43:16.178 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 1(Integer)
+2021-03-29 15:43:16.180 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:43:16.183  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Return ------ view/search
+2021-03-29 15:43:16.183  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:43:16.183  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Time Cost            : 94 ms
+2021-03-29 15:44:37.652  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:44:37.653  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/', httpMethod='GET', classMethod='com.zm.news.controller.IndexController.index', requestParams={model={}, page=null}}
+2021-03-29 15:44:37.653 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.5
+2021-03-29 15:44:37.655 ERROR 18820 --- [http-nio-8080-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 81475
+2021-03-29 15:44:37.661 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.NewsMapper.getCount   : ==>  Preparing: select count(news_id) from n_news where news_status = 1
+2021-03-29 15:44:37.661 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.NewsMapper.getCount   : ==> Parameters: 
+2021-03-29 15:44:37.663 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.NewsMapper.getCount   : <==      Total: 1
+2021-03-29 15:44:37.666 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.48148148148148145
+2021-03-29 15:44:37.666 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.NewsMapper.orderByViews_COUNT    : ==>  Preparing: SELECT count(0) FROM n_news WHERE news_status = 1
+2021-03-29 15:44:37.667 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.NewsMapper.orderByViews_COUNT    : ==> Parameters: 
+2021-03-29 15:44:37.668 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.NewsMapper.orderByViews_COUNT    : <==      Total: 1
+2021-03-29 15:44:37.668 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.4642857142857143
+2021-03-29 15:44:37.668 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.news.mapper.NewsMapper.orderByViews  : ==>  Preparing: select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source from n_news where news_status = 1 order by news_views desc LIMIT ?
+2021-03-29 15:44:37.669 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.news.mapper.NewsMapper.orderByViews  : ==> Parameters: 10(Integer)
+2021-03-29 15:44:37.673 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.news.mapper.NewsMapper.orderByViews  : <==      Total: 4
+2021-03-29 15:44:37.677 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.4482758620689655
+2021-03-29 15:44:37.677 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.N.orderByCommentCount_COUNT      : ==>  Preparing: SELECT count(0) FROM n_news WHERE news_status = 1
+2021-03-29 15:44:37.677 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.N.orderByCommentCount_COUNT      : ==> Parameters: 
+2021-03-29 15:44:37.678 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.N.orderByCommentCount_COUNT      : <==      Total: 1
+2021-03-29 15:44:37.679 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.43333333333333335
+2021-03-29 15:44:37.679 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.NewsMapper.orderByCommentCount   : ==>  Preparing: select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source from n_news where news_status = 1 order by news_comment_count desc LIMIT ?
+2021-03-29 15:44:37.679 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.NewsMapper.orderByCommentCount   : ==> Parameters: 8(Integer)
+2021-03-29 15:44:37.683 DEBUG 18820 --- [http-nio-8080-exec-3] c.z.n.m.NewsMapper.orderByCommentCount   : <==      Total: 4
+2021-03-29 15:44:37.695 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.5555555555555556
+2021-03-29 15:44:37.695 DEBUG 18820 --- [http-nio-8080-exec-3] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.6
+2021-03-29 15:44:37.695  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Return ------ index
+2021-03-29 15:44:37.695  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:44:37.695  INFO 18820 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Time Cost            : 43 ms
+2021-03-29 15:44:44.045  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:44:44.051  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/search', httpMethod='POST', classMethod='com.zm.news.controller.IndexController.search', requestParams={query=美国, model={}, page=1}}
+2021-03-29 15:44:44.134 DEBUG 18820 --- [http-nio-8080-exec-2] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.35714285714285715
+2021-03-29 15:44:44.134 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:44:44.135 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 1(Integer)
+2021-03-29 15:44:44.137 DEBUG 18820 --- [http-nio-8080-exec-2] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:44:44.139  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Return ------ view/search
+2021-03-29 15:44:44.139  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:44:44.140  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Time Cost            : 95 ms
+2021-03-29 15:45:43.552  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:45:43.553  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/search', httpMethod='POST', classMethod='com.zm.news.controller.IndexController.search', requestParams={query=美国, model={}, page=1}}
+2021-03-29 15:45:43.637 DEBUG 18820 --- [http-nio-8080-exec-5] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.4
+2021-03-29 15:45:43.638 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:45:43.638 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 1(Integer)
+2021-03-29 15:45:43.640 DEBUG 18820 --- [http-nio-8080-exec-5] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:45:43.641  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Return ------ view/search
+2021-03-29 15:45:43.641  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:45:43.641  INFO 18820 --- [http-nio-8080-exec-5] com.zm.news.aspect.LogAspect             : Time Cost            : 89 ms
+2021-03-29 15:45:54.319  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:45:54.319  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/search', httpMethod='POST', classMethod='com.zm.news.controller.IndexController.search', requestParams={query=美国, model={}, page=1}}
+2021-03-29 15:45:54.400 DEBUG 18820 --- [http-nio-8080-exec-9] com.zm.news.mapper.TypeMapper            : Cache Hit Ratio [com.zm.news.mapper.TypeMapper]: 0.4375
+2021-03-29 15:45:54.400 DEBUG 18820 --- [http-nio-8080-exec-9] c.z.n.m.TypeMapper.findByPrimaryKey      : ==>  Preparing: select * from n_type where type_id = ?;
+2021-03-29 15:45:54.400 DEBUG 18820 --- [http-nio-8080-exec-9] c.z.n.m.TypeMapper.findByPrimaryKey      : ==> Parameters: 1(Integer)
+2021-03-29 15:45:54.402 DEBUG 18820 --- [http-nio-8080-exec-9] c.z.n.m.TypeMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 15:45:54.402  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Return ------ view/search
+2021-03-29 15:45:54.402  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:45:54.402  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Time Cost            : 83 ms
+2021-03-29 15:46:21.198  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:46:21.199  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/index', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toAdmin', requestParams={}}
+2021-03-29 15:46:21.199  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Return ------ admin/login
+2021-03-29 15:46:21.199  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:46:21.199  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 15:46:22.528  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:46:22.528  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/login', httpMethod='POST', classMethod='com.zm.news.controller.AdminController.login', requestParams={user=User{userId=null, nickname='null', username='admin', password='admin', sex=null, age=null, roleId=null, address='null', userStatus=null, remark='null'}}}
+2021-03-29 15:46:22.529 DEBUG 18820 --- [http-nio-8080-exec-7] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.07692307692307693
+2021-03-29 15:46:22.529 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.m.U.findByUsernameAndPassword      : ==>  Preparing: select user_id,username,nickname, role_id from n_user where username = ? and password = ?
+2021-03-29 15:46:22.530 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.m.U.findByUsernameAndPassword      : ==> Parameters: admin(String), 21232f297a57a5a743894a0e4a801fc3(String)
+2021-03-29 15:46:22.531 DEBUG 18820 --- [http-nio-8080-exec-7] c.z.n.m.U.findByUsernameAndPassword      : <==      Total: 1
+2021-03-29 15:46:22.532  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Return ------ true
+2021-03-29 15:46:22.532  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:46:22.532  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Time Cost            : 4 ms
+2021-03-29 15:46:25.760  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:46:25.761  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/index', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toAdmin', requestParams={}}
+2021-03-29 15:46:25.761  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Return ------ admin/index
+2021-03-29 15:46:25.761  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:46:25.761  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 15:46:26.346  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:46:26.346  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toWelcome', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toWelcome', requestParams={model={}}}
+2021-03-29 15:46:26.347 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.07142857142857142
+2021-03-29 15:46:26.347 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.UserMapper.getCount   : ==>  Preparing: select count(user_id) from n_user where user_status = 0
+2021-03-29 15:46:26.348 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.UserMapper.getCount   : ==> Parameters: 
+2021-03-29 15:46:26.350 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.UserMapper.getCount   : <==      Total: 1
+2021-03-29 15:46:26.350 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-03-29 15:46:26.351 DEBUG 18820 --- [http-nio-8080-exec-4] c.zm.news.mapper.CommentMapper.getCount  : ==>  Preparing: select count(comment_id) from n_comment;
+2021-03-29 15:46:26.351 DEBUG 18820 --- [http-nio-8080-exec-4] c.zm.news.mapper.CommentMapper.getCount  : ==> Parameters: 
+2021-03-29 15:46:26.352 DEBUG 18820 --- [http-nio-8080-exec-4] c.zm.news.mapper.CommentMapper.getCount  : <==      Total: 1
+2021-03-29 15:46:26.353 DEBUG 18820 --- [http-nio-8080-exec-4] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.45161290322580644
+2021-03-29 15:46:26.353  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Return ------ admin/welcome
+2021-03-29 15:46:26.353  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:46:26.353  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Time Cost            : 8 ms
+2021-03-29 15:49:43.262  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:49:43.262  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toLogin;jsessionid=2FE64686C62FF3C89CD0E941FA834BE2', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toLogin', requestParams={}}
+2021-03-29 15:49:43.262  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Return ------ login
+2021-03-29 15:49:43.262  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:49:43.262  INFO 18820 --- [http-nio-8080-exec-2] com.zm.news.aspect.LogAspect             : Time Cost            : 0 ms
+2021-03-29 15:49:43.374  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 15:49:43.374  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/getVerifyCode', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.getVerificationCode', requestParams={}}
+2021-03-29 15:49:43.395  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Return ------ null
+2021-03-29 15:49:43.395  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 15:49:43.395  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Time Cost            : 21 ms
+2021-03-29 16:00:02.265  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 16:00:02.265  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/checkCode', httpMethod='POST', classMethod='com.zm.news.controller.SystemController.checkCode', requestParams={checkCode=wfum}}
+2021-03-29 16:00:02.265  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Return ------ {flag=true}
+2021-03-29 16:00:02.265  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 16:00:02.265  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Time Cost            : 0 ms
+2021-03-29 16:00:02.278  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 16:00:02.278  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/login', httpMethod='POST', classMethod='com.zm.news.controller.SystemController.login', requestParams={user=User{userId=null, nickname='null', username='pangpang', password='12345678', sex=null, age=null, roleId=null, address='null', userStatus=null, remark='null'}}}
+2021-03-29 16:00:02.279 DEBUG 18820 --- [http-nio-8080-exec-9] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.06666666666666667
+2021-03-29 16:00:02.280 ERROR 18820 --- [http-nio-8080-exec-9] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 815928
+2021-03-29 16:00:02.282  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 16:00:02.282  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/checkCode', httpMethod='POST', classMethod='com.zm.news.controller.SystemController.checkCode', requestParams={checkCode=wfum}}
+2021-03-29 16:00:02.282  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Return ------ {flag=true}
+2021-03-29 16:00:02.282  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 16:00:02.282  INFO 18820 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Time Cost            : 0 ms
+2021-03-29 16:00:02.288 DEBUG 18820 --- [http-nio-8080-exec-9] c.z.n.m.U.findByUsernameAndPassword      : ==>  Preparing: select user_id,username,nickname, role_id from n_user where username = ? and password = ?
+2021-03-29 16:00:02.288 DEBUG 18820 --- [http-nio-8080-exec-9] c.z.n.m.U.findByUsernameAndPassword      : ==> Parameters: pangpang(String), 25d55ad283aa400af464c76d713c07ad(String)
+2021-03-29 16:00:02.290 DEBUG 18820 --- [http-nio-8080-exec-9] c.z.n.m.U.findByUsernameAndPassword      : <==      Total: 1
+2021-03-29 16:00:02.292  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Return ------ true
+2021-03-29 16:00:02.292  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 16:00:02.292  INFO 18820 --- [http-nio-8080-exec-9] com.zm.news.aspect.LogAspect             : Time Cost            : 14 ms
+2021-03-29 16:00:02.299  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 16:00:02.299  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/checkCode', httpMethod='POST', classMethod='com.zm.news.controller.SystemController.checkCode', requestParams={checkCode=wfum}}
+2021-03-29 16:00:02.299  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Return ------ {flag=true}
+2021-03-29 16:00:02.299  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 16:00:02.300  INFO 18820 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-03-29 16:00:02.328  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 16:00:02.328  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/index', httpMethod='GET', classMethod='com.zm.news.controller.IndexController.index', requestParams={model={}, page=null}}
+2021-03-29 16:00:02.329 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.46875
+2021-03-29 16:00:02.334 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.48484848484848486
+2021-03-29 16:00:02.334 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.5
+2021-03-29 16:00:02.336 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.5142857142857142
+2021-03-29 16:00:02.336 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.5277777777777778
+2021-03-29 16:00:02.344 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.6363636363636364
+2021-03-29 16:00:02.345 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.6666666666666666
+2021-03-29 16:00:02.345  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Return ------ index
+2021-03-29 16:00:02.345  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 16:00:02.345  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Time Cost            : 17 ms
+2021-03-29 16:00:05.649  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 16:00:05.650  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toSetting', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toSetting', requestParams={model={}}}
+2021-03-29 16:00:05.650 DEBUG 18820 --- [http-nio-8080-exec-10] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.0625
+2021-03-29 16:00:05.651 DEBUG 18820 --- [http-nio-8080-exec-10] c.z.n.m.UserMapper.findByPrimaryKey      : ==>  Preparing: select user_id, nickname, username, password, sex, age, role_id, address, user_status, remark from n_user where user_id = ?
+2021-03-29 16:00:05.652 DEBUG 18820 --- [http-nio-8080-exec-10] c.z.n.m.UserMapper.findByPrimaryKey      : ==> Parameters: 2(Integer)
+2021-03-29 16:00:05.653 DEBUG 18820 --- [http-nio-8080-exec-10] c.z.n.m.UserMapper.findByPrimaryKey      : <==      Total: 1
+2021-03-29 16:00:05.653  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Return ------ view/user-setting
+2021-03-29 16:00:05.654  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 16:00:05.654  INFO 18820 --- [http-nio-8080-exec-10] com.zm.news.aspect.LogAspect             : Time Cost            : 5 ms
+2021-03-29 16:00:45.310  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-03-29 16:00:45.310  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/system/toPassword', httpMethod='GET', classMethod='com.zm.news.controller.SystemController.toPassword', requestParams={}}
+2021-03-29 16:00:45.310  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Return ------ view/user-password
+2021-03-29 16:00:45.310  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-03-29 16:00:45.310  INFO 18820 --- [http-nio-8080-exec-4] com.zm.news.aspect.LogAspect             : Time Cost            : 0 ms

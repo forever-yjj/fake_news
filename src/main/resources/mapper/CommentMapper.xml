@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zm.news.mapper.CommentMapper">
+
+    <!--开启二级缓存,使用Ehcache缓存框架-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <resultMap id="commentMap" type="Comment">
+        <id property="commentId" column="comment_id" />
+        <result property="commentContent" column="comment_content" />
+        <result property="userId" column="user_id" />
+        <result property="parentCommentId" column="parent_comment_id" />
+        <result property="newsId" column="news_id" />
+        <result property="commentDate" column="comment_date" />
+        <!--一对一-->
+        <association property="user" javaType="com.zm.news.entity.User" column="user_id" select="com.zm.news.mapper.UserMapper.findByPrimaryKeyNotNull" />
+        <association property="news" javaType="com.zm.news.entity.News" column="news_id" select="com.zm.news.mapper.NewsMapper.findByPrimaryKeyNotNull" />
+    </resultMap>
+
+    <select id="findCommentList" parameterType="CommentVo" resultMap="commentMap">
+        select *
+        from n_comment
+        <where>
+            <if test="userId != null and userId gt 0">
+                user_id = #{userId}
+            </if>
+            <if test="newsId != null and newsId gt 0">
+                and news_id = #{newsId}
+            </if>
+            <if test="dateStart != null or dateEnd != null">
+                and comment_date between #{dateStart} and #{dateEnd}
+            </if>
+        </where>
+    </select>
+
+    <select id="findCommentByPrimary" resultType="com.zm.news.entity.Comment">
+        select comment_id,comment_date,parent_comment_id
+        from n_comment where comment_id = #{param1} and parent_comment_id = #{param2};
+    </select>
+
+    <select id="findByNewsIdAndParentId" resultMap="commentMap" flushCache="true">
+        select *
+        from n_comment where news_id = #{param1} and parent_comment_id =#{param2}
+        order by comment_date desc;
+    </select>
+
+    <select id="findFirstLevel" resultMap="commentMap">
+        select *
+        from n_comment where news_id = #{param1} and parent_comment_id =#{param2}
+        order by comment_date desc;
+    </select>
+
+    <select id="findSecondLevel" resultMap="commentMap">
+        select *
+        from n_comment where news_id = #{param1} and parent_comment_id =#{param2}
+        order by comment_date desc;
+    </select>
+
+    <insert id="insertComment" parameterType="com.zm.news.entity.Comment">
+        insert into n_comment (comment_content, user_id, parent_comment_id, news_id, comment_date)
+        values (#{commentContent}, #{userId}, #{parentCommentId}, #{newsId}, #{commentDate});
+    </insert>
+
+    <delete id="deleteByPrimaryKey" parameterType="int">
+        delete from n_comment where comment_id = #{commentId}
+    </delete>
+
+    <select id="getCountNewsId" resultType="int">
+        select count(news_id)
+        from n_comment;
+    </select>
+
+    <select id="getCount" resultType="int">
+        select count(comment_id)
+        from n_comment;
+    </select>
+
+</mapper>

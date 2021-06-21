@@ -1,0 +1,75 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "toWelcome"
+  },
+  "logoInfo": {
+    "title": "Fake`News",
+    "image": "/layuimini/images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "主页",
+          "href": "toWelcome",
+          "icon": "fa fa-home",
+          "target": "_self"
+        },
+		{
+		  "title": "用户管理",
+		  "href": "toUser",
+		  "icon": "fa fa-user",
+		  "target": "_self"
+		},
+        {
+          "title": "新闻管理",
+          "href": "toNews",
+          "icon": "fa fa-newspaper-o",
+          "target": "_self"
+        },
+		{
+		  "title": "评论管理",
+		  "href": "toComment",
+		  "icon": "fa fa-comments",
+		  "target": "_self"
+		},
+		{
+		  "title": "分类管理",
+		  "href": "toType",
+		  "icon": "fa fa-file-text",
+		  "target": "_self"
+		},
+		{
+		  "title": "标签管理",
+		  "href": "toTag",
+		  "icon": "fa fa-tags",
+		  "target": "_self"
+		},
+        {
+          "title": "友链管理",
+          "href": "toFriend",
+          "icon": "fa fa-heart",
+          "target": "_self"
+        },
+		{
+		  "title": "建站统计",
+		  "href": "toStatics",
+		  "icon": "fa fa-bar-chart",
+		  "target": "_self"
+		},
+        {
+          "title": "数据监控",
+          "href": "/druid/login",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        }
+      ]
+    }
+  ]
+}

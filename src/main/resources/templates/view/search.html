@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head th:replace="_fragments :: head(~{::title})">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>搜索结果</title>
+		<link rel="stylesheet" href="../static/semantic-ui/semantic.min.css" />
+		<link rel="stylesheet" href="../static/css/me.css" />
+	</head>
+	<body>
+
+	<!-- 导航 -->
+	<nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+		<div class="ui container">
+			<div class="ui inverted secondary stackable menu">
+				<h2 class="ui red header item">Fake`News</h2>
+				<a href="#" class="active item m-mobile-hide"><i class="home icon"></i>首页</a>
+				<a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+				<a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>最新</a>
+				<a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>排行</a>
+				<a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+				<div class="right m-item menu m-mobile-hide">
+					<div class="item">
+						<form name="search" action="#" th:action="@{/search}" method="post" target="_blank">
+							<div class="ui icon inverted transparent input">
+								<input type="text" name="query" placeholder="输入关键字..." th:value="${query}" />
+								<i onclick="document.forms['search'].submit()" class="search link icon"></i>
+							</div>
+						</form>
+					</div>
+					<div class="right item">
+						<div class="login-register">
+							<a class="ui inverted button">登录</a>
+							<a class="ui inverted button">注册</a>
+						</div>
+					</div>
+					<div class="right m-mobile-hide menu" style="display: none;">
+						<div class="ui dropdown item">
+							<div class="text"><img class="ui avatar image" src="https://unsplash.it/100/100/?image=1008">
+								Jenny Hess
+							</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<a href="#" class="item">个人信息</a>
+								<a href="#" class="item">修改密码</a>
+								<a href="#" class="item">注销</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="#" class="ui menu toggle black button m-right-top m-mobile-show">
+			<i class="sidebar icon"></i>
+		</a>
+	</nav>
+
+	<!--中间内容-->
+	<div  class="m-container-small m-padded-tb-big">
+		<div class="ui container">
+			<!--header-->
+			<div class="ui top attached segment">
+				<div class="ui middle aligned two column grid">
+					<div class="column">
+						<h3 class="ui red header">搜索结果</h3>
+					</div>
+					<div class="right aligned column">
+						共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${pageInfo.getTotal()}"> 14 </h2> 个
+					</div>
+				</div>
+			</div>
+
+
+			<div class="ui top attached red segment">
+
+				<div class="ui padded vertical segment m-padded-tb-big" th:if="${#lists.isEmpty(newsList)}">
+					<div class="ui mobile reversed stackable grid">
+						<div class="eleven wide column" style="padding-left: 150px">
+							<h3>抱歉没有找到相关内容</h3>
+							<div >
+								<p>温馨提示：</p>
+								<p>请检查您的输入是否正确</p>
+								<p>如网页未收录或者新站未收录，请提交网址给我们</p>
+								<p>如有任何意见或建议，请及时反馈给我们</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="ui padded vertical segment m-padded-tb-big" th:each="news : ${newsList}">
+					<div class="ui mobile reversed stackable grid">
+						<div class="eleven wide column">
+							<h3 class="ui header">
+								<a href="#" th:href="@{/news/{id}(id=${news.newsId})}" target="_blank" class="m-black" th:utext="${news.newsTitle}">
+									外媒：美驻联合国大使克拉夫特取消访台</a></h3>
+							<p class="m-text" th:utext="|${news.newsDesc}......|">突发！外媒：美驻联合国大使克拉夫特取消访台</p>
+							<div class="ui stackable grid">
+								<div class="eleven wide column">
+									<div class="ui mini horizontal link list">
+										<div class="item">
+											<img src="https://unsplash.it/100/100/?image=1004" class="ui avatar image" />
+											<div class="content"><a href="#" class="header" th:text="${news.newsSource}">张艺博</a></div>
+										</div>
+										<div class="item">
+											<i class="calendar icon"></i> <span th:text="${#dates.format(news.newsDate,'yyyy-MM-dd')}">2020-04-29</span>
+										</div>
+										<div class="item">
+											<i class="eye icon"></i> <span th:text="${news.newsViews}">321</span>
+										</div>
+										<div class="item">
+											<i class="comment alternate icon"></i><span th:text="${news.newsCommentCount}">321</span>
+										</div>
+									</div>
+								</div>
+								<div class="right aligned five wide column">
+									<a href="#" target="_blank" th:text="${news.type.typeName}" class="ui red basic label m-padded-tiny m-text-thin">国际</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="five wide column">
+							<a href="#" target="_blank">
+								<img th:src="${news.newsImage}" src="https://unsplash.it/800/450/?image=1005" class="ui rounded image" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--footer-->
+			<div class="ui bottom attached segment" th:if="${pageInfo.getTotal()}>1">
+				<div class="ui middle aligned two column grid">
+					<div class="column">
+						<a href="#" th:href="@{/search/(page=${page}-1)}"  th:unless="${pageInfo.isIsFirstPage()}" class="ui mini red basic button">上一页</a>
+					</div>
+					<div class="right aligned column">
+						<a href="#" th:href="@{/search/(page=${page}+1)}"  th:unless="${pageInfo.isIsLastPage()}" class="ui mini red basic button">下一页</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<br>
+	<br>
+
+	<!-- 底部footer -->
+	<footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+		<div class="ui center aligned container">
+			<div class="ui inverted divided stackable grid">
+				<div class="three wide column">
+					<div class="ui inverted link list">
+						<div class="item">
+							<img src="static/images/wechat.png" class="ui rounded image " alt="" style="width: 110px;">
+						</div>
+					</div>
+				</div>
+				<div class="three wide column">
+					<h4 class="ui inverted header">友情链接</h4>
+					<div class="ui inverted link list">
+						<a href="#" class="item">用户故事（User Story）</a>
+						<a href="#" class="item">用户故事（User Story）</a>
+						<a href="#" class="item">用户故事（User Story）</a>
+					</div>
+				</div>
+				<div class="three wide column">
+					<h4 class="ui inverted header">联系我</h4>
+					<div class="ui inverted link list">
+						<a href="#" class="item">Email：438216087@qq.com</a>
+						<a href="#" class="item">QQ：438216087</a>
+					</div>
+				</div>
+				<div class="seven wide column">
+					<h4 class="ui inverted header">新闻视界</h4>
+					<p>如果你有好的创意，好的想法，请投递至我的邮箱，请与我们合作。。。</p>
+				</div>
+			</div>
+			<div class="ui inverted section divider"></div>
+			<p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020 ZM All Rights Reserved - 豫ICP备20011264号</p>
+		</div>
+	</footer>
+	</body>
+
+	<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+	<script src="../static/js/jquery-3.4.1.min.js"></script>
+	<script src="../static/semantic-ui/semantic.min.js"></script>
+	<!--/*/</th:block>/*/-->
+	<script>
+		$('.menu.toggle').click(function(){
+			$('.m-item').toggleClass('m-mobile-hide');
+		});
+
+	</script>
+</html>

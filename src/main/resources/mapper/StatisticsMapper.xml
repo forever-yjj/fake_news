@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zm.news.mapper.StatisticsMapper">
+
+    <sql id="updateById">
+        <if test="ip != null and ip != ''">
+            ip = #{ip}
+        </if>
+        <if test="requestCount != null">
+            and request_count = request_count + #{requestCount}
+        </if>
+        <if test="requestDate != null">
+            and request_date = #{requestDate}
+        </if>
+        <if test="location != null">
+            and location = #{location}
+        </if>
+    </sql>
+
+    <select id="selectAll" resultType="com.zm.news.entity.Statistics">
+        select id, ip, request_count, request_date, location
+        from n_statistics
+    </select>
+
+    <select id="findByParams" parameterType="Statistics" resultType="Statistics">
+        select id, ip, request_count, request_date, location
+        from n_statistics
+        <where>
+            <if test="param1.ip != null and param1.ip != ''">
+                and ip = #{param1.ip}
+            </if>
+            <!--昨天-->
+            <if test="type == 1">
+                and request_date = ADDDATE(CURDATE(),-1)
+            </if>
+            <!--最近7天-->
+            <if test="type == 7">
+                and request_date BETWEEN ADDDATE(CURDATE(),-8) AND ADDDATE(CURDATE(),-1)
+            </if>
+            <!--最近30天-->
+            <if test="type == 30">
+                and request_date BETWEEN ADDDATE(CURDATE(),-31) AND ADDDATE(CURDATE(),-1)
+            </if>
+            <!--最近1年-->
+            <if test="type == 365">
+                and request_date BETWEEN ADDDATE(CURDATE(),-366) AND ADDDATE(CURDATE(),-1)
+            </if>
+        </where>
+    </select>
+
+    <!--获取从昨天开始近10天的日期-->
+    <select id="getRecentDates" resultType="java.util.Date">
+        SELECT DISTINCT request_date FROM n_statistics ORDER BY request_date DESC LIMIT 1,10
+    </select>
+
+    <!--获取从昨天开始近10天每天的访问量-->
+    <select id="getRecentRequests" resultType="java.lang.Integer">
+        SELECT SUM(request_count),request_date FROM n_statistics GROUP BY request_date ORDER BY request_date DESC LIMIT 1,10
+    </select>
+
+    <!--获取从昨天开始近10天每天的访客数-->
+    <select id="getRecentVisitors" resultType="java.lang.Integer">
+        SELECT COUNT(DISTINCT ip),request_date FROM n_statistics GROUP BY request_date ORDER BY request_date DESC LIMIT 1,10
+    </select>
+
+
+    <select id="selectByPrimary" parameterType="int" resultType="com.zm.news.entity.Statistics">
+        select id, ip, request_count, request_date, location
+        from n_statistics where id = #{id}
+    </select>
+
+    <select id="selectByIp" parameterType="string" resultType="com.zm.news.entity.Statistics">
+        select id, ip, request_count, request_date, location
+        from n_statistics where ip = #{ip}
+    </select>
+
+    <!--获取不同时间段的访问数量-->
+    <select id="getRequestCount" resultType="java.lang.Integer">
+        select SUM(request_count),request_date FROM n_statistics
+        <where>
+            <!--昨天-->
+            <if test="type == 1">
+                and request_date = ADDDATE(CURDATE(),-1)
+            </if>
+            <!--最近7天-->
+            <if test="type == 7">
+                and request_date BETWEEN ADDDATE(CURDATE(),-8) AND ADDDATE(CURDATE(),-1)
+            </if>
+            <!--最近30天-->
+            <if test="type == 30">
+                and request_date BETWEEN ADDDATE(CURDATE(),-31) AND ADDDATE(CURDATE(),-1)
+            </if>
+            <!--最近1年-->
+            <if test="type == 365">
+                and request_date BETWEEN ADDDATE(CURDATE(),-366) AND ADDDATE(CURDATE(),-1)
+            </if>
+        </where>
+    </select>
+
+    <!--获取不同时间段的访客数量-->
+    <select id="getVisitorCount" resultType="int">
+        select COUNT(DISTINCT ip) FROM n_statistics
+        <where>
+            <!--昨天-->
+            <if test="type == 1">
+                and request_date = ADDDATE(CURDATE(),-1)
+            </if>
+            <!--最近7天-->
+            <if test="type == 7">
+                and request_date BETWEEN ADDDATE(CURDATE(),-8) AND ADDDATE(CURDATE(),-1)
+            </if>
+            <!--最近30天-->
+            <if test="type == 30">
+                and request_date BETWEEN ADDDATE(CURDATE(),-31) AND ADDDATE(CURDATE(),-1)
+            </if>
+            <!--最近1年-->
+            <if test="type == 365">
+                and request_date BETWEEN ADDDATE(CURDATE(),-366) AND ADDDATE(CURDATE(),-1)
+            </if>
+        </where>
+    </select>
+
+    <insert id="insert" parameterType="Statistics" keyProperty="id" useGeneratedKeys="true">
+        insert into n_statistics (ip, request_count, request_date, location)
+        values (#{ip},#{requestCount}, #{requestDate}, #{location})
+    </insert>
+
+    <update id="updateByPrimary" parameterType="Statistics">
+        update n_statistics
+        <set>
+            <include refid="updateById" />
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="updateByIp" parameterType="Statistics">
+        update n_statistics
+        <set>
+            <if test="requestCount != null">
+                request_count = request_count + #{requestCount}
+            </if>
+            <if test="requestDate != null">
+                and request_date = #{requestDate}
+            </if>
+            <if test="location != null">
+                and location = #{location}
+            </if>
+        </set>
+        where ip = #{ip}
+    </update>
+
+    <!--添加IP的访问数次数-->
+    <update id="updateRequestCount">
+        update n_statistics
+        set request_count = request_count + 1
+        where ip = #{ip}  AND request_date = CURDATE();
+    </update>
+
+    <delete id="deleteByPrimary" parameterType="int">
+        delete from n_statistics where id = #{id}
+    </delete>
+
+    <select id="getCount" resultType="int">
+        select COUNT(id)
+        from n_statistics
+    </select>
+
+</mapper>

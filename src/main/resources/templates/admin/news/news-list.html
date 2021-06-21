@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>新闻列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/layuimini/lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="/layuimini/css/public.css" media="all">
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+
+        <fieldset class="table-search-fieldset">
+            <legend>搜索信息</legend>
+            <div style="margin: 10px 10px 10px 10px">
+                <form class="layui-form layui-form-pane" action="">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">新闻搜索</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="newsTitle" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+						<div class="layui-inline">
+						    <label class="layui-form-label">新闻分类</label>
+						    <div class="layui-input-inline">
+						         <select id="selects" name="newsType" lay-verify="required">
+						                <option value="0">未选择</option>
+						         </select>
+						    </div>
+						</div>
+                        <div class="layui-inline">
+                            <button type="submit" class="layui-btn layui-btn-primary"  lay-submit lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+
+        <script type="text/html" id="toolbarDemo">
+            <div class="layui-btn-container">
+                <button class="layui-btn layui-btn-normal layui-btn-sm data-add-btn" lay-event="add"> 添加 </button>
+                <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn" lay-event="delete"> 删除 </button>
+            </div>
+        </script>
+
+        <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+
+        <script type="text/html" id="currentTableBar">
+            <a class="layui-btn layui-btn-normal layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
+            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+        </script>
+
+    </div>
+</div>
+<script src="/layuimini/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script>
+
+    layui.use(['form', 'table'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        $.post("[[@{/type/typeList}]]", function (list) {
+            $.each(list, function (index, item) {
+                $('#selects').append("<option value='"+ item.typeId +"'>"+ item.typeName +"</option>");
+            });
+            //重新渲染select
+            form.render('select');
+        }, 'json');
+
+        //switch 开关模板
+        var statusInput = function (d) { //名字需要和上面定义的名字对应上
+            var isChecked = d.newsStatus == "1" ?"checked":"";
+            var newsId = d.newsId;
+            return "<input type='checkbox' name='newsStatus' "+ isChecked +"  lay-skin='switch' lay-filter='status' lay-text='发布|草稿' value=" + newsId + ">";
+        };
+
+        table.render({
+            elem: '#currentTableId',
+            url: '[[@{/news/toNewsList}]]',
+            toolbar: '#toolbarDemo',
+            defaultToolbar: ['filter', 'exports', 'print', {
+                title: '提示',
+                layEvent: 'LAYTABLE_TIPS',
+                icon: 'layui-icon-tips'
+            }],
+            cols: [
+                [
+                    {type: "checkbox", width: 50},
+                    {field: 'newsId', width: 80, title: 'ID', sort: true},
+                    {field: 'newsTitle', width: 150, title: '新闻标题'},
+                    {field: 'type.TypeName', width: 80, title: '分类', sort: true,
+                        templet: function (d) {
+                            return d.type.typeName;
+                        }},
+                    {field: 'newsDate', width: 120, title: '修改时间'},
+                    {field: 'newsEditor', width: 100, title: '编辑者', sort: true},
+                    {field: 'newsStatus', width: 110, title: '审核', sort: true, templet: statusInput},
+                    {field: 'newsDesc', title: '新闻摘要', minWidth: 150},
+                    {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
+                ]
+            ],
+            limits: [10, 15, 20, 25, 50, 100],
+            limit: 10,
+            page: true,
+            skin: 'line'
+        });
+
+        // 监听搜索操作
+        form.on('submit(data-search-btn)', function (data) {
+            //执行搜索重载
+            table.reload('currentTableId', {
+                where: data.field
+            });
+
+            return false;
+        });
+
+        /**
+         * 发布|草稿 开关检测
+         */
+        form.on('switch(status)', function (data) {
+            var newsId = data.value;
+            var newsStatus = this.checked ? '1' : '0';
+
+            var index;
+            $.ajax({
+                type: 'POST',
+                url: '[[@{/news/changeStatus}]]',
+                data: {"newsId" :newsId,"newsStatus":newsStatus},
+                beforeSend:function(){
+                    index = layer.msg('正在切换中，请稍候',{icon: 16,time:false,shade:0.8});
+                },
+                error: function(data){
+                    console.log(data);
+                    layer.msg('数据异常，操作失败！', {icon: 5, time: 2000});
+                },
+                success: function(data){
+                    if(data){
+                        setTimeout(function(){
+                            layer.close(index);
+                            layer.msg('操作成功！', {icon: 1, time:1000});},1000);
+                    }else{
+                        console.log(data);
+                        layer.msg('数据异常，操作失败！', {icon: 5, time: 2000});
+                    }},
+                dataType:'JSON'
+            });
+        })
+
+        /**
+         * toolbar监听事件
+         */
+        table.on('toolbar(currentTableFilter)', function (obj) {
+            if (obj.event === 'add') {  // 监听添加操作
+                var index = layer.open({
+                    title: '添加新闻',
+                    type: 2,
+                    shade: 0.2,
+                    maxmin:true,
+                    shadeClose: true,
+                    area: ['100%', '100%'],
+                    content: '[[@{/news/toAdd}]]',
+                    end: function () {
+                        //弹出层结束， 表格重载
+                        table.reload('currentTableId', {});
+                    }
+                });
+                $(window).on("resize", function () {
+                    layer.full(index);
+                });
+            } else if (obj.event === 'delete') {  // 监听删除操作
+                var checkStatus = table.checkStatus('currentTableId')
+                    , data = checkStatus.data;
+                layer.confirm("真的删除么？", function (index) {
+                    $.get("[[@{/news/removeNewsT}]]", {'newsIds': JSON.stringify(data)}, function (flag) {
+                        if(flag) {
+                            layer.msg("删除成功",{title: false, icon: 1, time: 1000});
+                            //数据表格 重载
+                            table.reload('currentTableId',{
+                                page: {
+                                    curr: 1
+                                }
+                            });
+                            layer.close(index);
+                        }else {
+                            layer.msg("删除失败",{title: false, icon: 5, time: 2000});
+                        }
+                    });
+                });
+            }
+        });
+
+        //监听表格复选框选择
+        table.on('checkbox(currentTableFilter)', function (obj) {
+            console.log(obj)
+        });
+
+        table.on('tool(currentTableFilter)', function (obj) {
+            var data = obj.data;
+            if (obj.event === 'edit') {
+
+                var index = layer.open({
+                    title: '编辑新闻',
+                    type: 2,
+                    shade: 0.2,
+                    maxmin:true,
+                    shadeClose: true,
+                    area: ['100%', '100%'],
+                    content: '../news/toEditNews?newsId=' + data.newsId,
+                    end: function () {
+                        //弹出层结束， 表格重载
+                        table.reload('currentTableId', {});
+                    }
+                });
+                $(window).on("resize", function () {
+                    layer.full(index);
+                });
+                return false;
+            } else if (obj.event === 'delete') {
+                layer.confirm('真的删除行么',
+                    function (index) {
+                        $.get("[[@{/news/removeNews}]]", {'newsId': data.newsId}, function (flag) {
+                            if(flag) {
+                                obj.del();
+                                layer.close(index);
+                                layer.msg("删除成功",{title: false, icon: 1, time: 1000});
+                            }else {
+                                layer.msg("删除失败",{title: false, icon: 5, time: 2000});
+                            }
+                        })
+                    });
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>

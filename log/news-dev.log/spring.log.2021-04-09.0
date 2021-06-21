@@ -1,0 +1,142 @@
+2021-04-09 11:59:02.406  INFO 7136 --- [restartedMain] com.zm.news.NewsApplication              : Starting NewsApplication on Dell-ZM with PID 7136 (D:\zhangmiao\work\idea-workspace\news\target\classes started by 43821 in D:\zhangmiao\work\idea-workspace\news)
+2021-04-09 11:59:02.411 DEBUG 7136 --- [restartedMain] com.zm.news.NewsApplication              : Running with Spring Boot v2.3.5.RELEASE, Spring v5.2.10.RELEASE
+2021-04-09 11:59:02.411  INFO 7136 --- [restartedMain] com.zm.news.NewsApplication              : The following profiles are active: pro
+2021-04-09 11:59:02.464  INFO 7136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-09 11:59:02.464  INFO 7136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-09 11:59:04.219  INFO 7136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-09 11:59:04.221  INFO 7136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2021-04-09 11:59:04.321  INFO 7136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94ms. Found 1 Elasticsearch repository interfaces.
+2021-04-09 11:59:04.326  INFO 7136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-09 11:59:04.327  INFO 7136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2021-04-09 11:59:04.348  INFO 7136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 Reactive Elasticsearch repository interfaces.
+2021-04-09 11:59:04.364  INFO 7136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-09 11:59:04.366  INFO 7136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-09 11:59:04.412  INFO 7136 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.zm.news.elasticsearch.NewsRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021-04-09 11:59:04.412  INFO 7136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 Redis repository interfaces.
+2021-04-09 11:59:04.900  INFO 7136 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'springMethodAspect' of type [com.zm.news.config.SpringMethodAspect$$EnhancerBySpringCGLIB$$1cfca07a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-09 11:59:04.911  INFO 7136 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatInterceptor' of type [com.alibaba.druid.support.spring.stat.DruidStatInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-09 11:59:04.914  INFO 7136 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatPointcut' of type [org.springframework.aop.support.JdkRegexpMethodPointcut] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-09 11:59:04.915  INFO 7136 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'druidStatAdvisor' of type [org.springframework.aop.support.DefaultPointcutAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-09 11:59:05.303  INFO 7136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-09 11:59:05.312  INFO 7136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-09 11:59:05.313  INFO 7136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-04-09 11:59:05.315  INFO 7136 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2021-04-09 11:59:05.315  INFO 7136 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-04-09 11:59:05.316  INFO 7136 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-04-09 11:59:05.321  INFO 7136 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2021-04-09 11:59:05.492  INFO 7136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-09 11:59:05.492  INFO 7136 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3027 ms
+2021-04-09 11:59:06.398  WARN 7136 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-09 11:59:06.398  WARN 7136 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-09 11:59:06.399  WARN 7136 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-09 11:59:06.399  WARN 7136 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-09 11:59:06.430  WARN 7136 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.geo.Point to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-09 11:59:06.430  WARN 7136 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.geo.Point as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-09 11:59:06.430  WARN 7136 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class org.springframework.data.elasticsearch.core.geo.GeoPoint to interface java.util.Map as writing converter although it doesn't convert to a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-09 11:59:06.463  WARN 7136 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from interface java.util.Map to class org.springframework.data.elasticsearch.core.geo.GeoPoint as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-04-09 11:59:07.476  INFO 7136 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Spring Data Elasticsearch: 4.0.5.RELEASE
+2021-04-09 11:59:07.476  INFO 7136 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Elasticsearch Client in build: 7.6.2
+2021-04-09 11:59:07.476  INFO 7136 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Elasticsearch Client used: 7.6.2
+2021-04-09 11:59:07.476  INFO 7136 --- [restartedMain] o.s.d.elasticsearch.support.VersionInfo  : Version Elasticsearch cluster: 7.6.2
+2021-04-09 11:59:07.708  INFO 7136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-09 11:59:08.687  INFO 7136 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-09 11:59:08.875  INFO 7136 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-09 11:59:09.415  INFO 7136 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2021-04-09 11:59:10.725  INFO 7136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-09 11:59:10.725  INFO 7136 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [47.101.200.117:5672]
+2021-04-09 11:59:11.006  INFO 7136 --- [restartedMain] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#46a09821:0/SimpleConnection@2ab99d13 [delegate=amqp://fake-news@47.101.200.117:5672//news, localPort= 1099]
+2021-04-09 11:59:11.010  INFO 7136 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (spring.gen-NfJzlDKuTDmBeqX12Zx0Eg) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2021-04-09 11:59:11.011  INFO 7136 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (spring.gen-vMLONDuARv-0Pt9SGIzWvA) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2021-04-09 11:59:11.011  INFO 7136 --- [restartedMain] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (spring.gen-KxZUhNLQTaaH3FptwtLiag) durable:false, auto-delete:true, exclusive:true. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2021-04-09 11:59:12.037  INFO 7136 --- [restartedMain] com.zm.news.NewsApplication              : Started NewsApplication in 10.467 seconds (JVM running for 12.306)
+2021-04-09 12:00:52.891  INFO 7136 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-09 12:00:52.891  INFO 7136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-09 12:00:52.908  INFO 7136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2021-04-09 12:00:52.961  INFO 7136 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-04-09 12:00:52.964  INFO 7136 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/', httpMethod='GET', classMethod='com.zm.news.controller.IndexController.index', requestParams={model={}, page=null}}
+2021-04-09 12:00:52.982 DEBUG 7136 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-04-09 12:00:53.191  INFO 7136 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-04-09 12:00:53.196 DEBUG 7136 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper.getCount   : ==>  Preparing: select count(news_id) from n_news where news_status = 1
+2021-04-09 12:00:53.300 DEBUG 7136 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper.getCount   : ==> Parameters: 
+2021-04-09 12:00:53.335 DEBUG 7136 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper.getCount   : <==      Total: 1
+2021-04-09 12:00:54.831 DEBUG 7136 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-04-09 12:00:54.831 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByViews_COUNT    : ==>  Preparing: SELECT count(0) FROM n_news WHERE news_status = 1
+2021-04-09 12:00:54.832 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByViews_COUNT    : ==> Parameters: 
+2021-04-09 12:00:54.834 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByViews_COUNT    : <==      Total: 1
+2021-04-09 12:00:54.837 DEBUG 7136 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-04-09 12:00:54.838 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.news.mapper.NewsMapper.orderByViews  : ==>  Preparing: select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source from n_news where news_status = 1 order by news_views desc LIMIT ?
+2021-04-09 12:00:54.842 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.news.mapper.NewsMapper.orderByViews  : ==> Parameters: 10(Integer)
+2021-04-09 12:00:54.907 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.news.mapper.NewsMapper.orderByViews  : <==      Total: 4
+2021-04-09 12:00:54.911 DEBUG 7136 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-04-09 12:00:54.911 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.N.orderByCommentCount_COUNT      : ==>  Preparing: SELECT count(0) FROM n_news WHERE news_status = 1
+2021-04-09 12:00:54.911 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.N.orderByCommentCount_COUNT      : ==> Parameters: 
+2021-04-09 12:00:54.913 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.N.orderByCommentCount_COUNT      : <==      Total: 1
+2021-04-09 12:00:54.914 DEBUG 7136 --- [http-nio-8080-exec-1] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.0
+2021-04-09 12:00:54.914 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByCommentCount   : ==>  Preparing: select news_id, news_title,news_desc,news_image,news_date,news_comment_count,news_views,news_type, news_source from n_news where news_status = 1 order by news_comment_count desc LIMIT ?
+2021-04-09 12:00:54.915 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByCommentCount   : ==> Parameters: 8(Integer)
+2021-04-09 12:00:54.927 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.NewsMapper.orderByCommentCount   : <==      Total: 4
+2021-04-09 12:00:55.052 DEBUG 7136 --- [http-nio-8080-exec-1] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.0
+2021-04-09 12:00:55.053 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.F.findFriendList_COUNT           : ==>  Preparing: SELECT count(0) FROM n_friend
+2021-04-09 12:00:55.055 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.F.findFriendList_COUNT           : ==> Parameters: 
+2021-04-09 12:00:55.065 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.F.findFriendList_COUNT           : <==      Total: 1
+2021-04-09 12:00:55.067 DEBUG 7136 --- [http-nio-8080-exec-1] com.zm.news.mapper.FriendMapper          : Cache Hit Ratio [com.zm.news.mapper.FriendMapper]: 0.0
+2021-04-09 12:00:55.067 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.FriendMapper.findFriendList      : ==>  Preparing: select friend_id, friend_name, website, friend_date from n_friend LIMIT ?
+2021-04-09 12:00:55.070 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.FriendMapper.findFriendList      : ==> Parameters: 4(Integer)
+2021-04-09 12:00:55.075 DEBUG 7136 --- [http-nio-8080-exec-1] c.z.n.m.FriendMapper.findFriendList      : <==      Total: 4
+2021-04-09 12:00:55.076  INFO 7136 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Return ------ index
+2021-04-09 12:00:55.076  INFO 7136 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-04-09 12:00:55.076  INFO 7136 --- [http-nio-8080-exec-1] com.zm.news.aspect.LogAspect             : Time Cost            : 2115 ms
+2021-04-09 12:02:32.340  INFO 7136 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-04-09 12:02:32.340  INFO 7136 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/index', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toAdmin', requestParams={}}
+2021-04-09 12:02:32.341  INFO 7136 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Return ------ admin/login
+2021-04-09 12:02:32.342  INFO 7136 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-04-09 12:02:32.342  INFO 7136 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Time Cost            : 2 ms
+2021-04-09 12:02:34.112  INFO 7136 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-04-09 12:02:34.113  INFO 7136 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/login', httpMethod='POST', classMethod='com.zm.news.controller.AdminController.login', requestParams={user=User{userId=null, nickname='null', username='admin', password='admin', sex=null, age=null, roleId=null, address='null', userStatus=null, remark='null'}}}
+2021-04-09 12:02:34.115 DEBUG 7136 --- [http-nio-8080-exec-3] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.0
+2021-04-09 12:02:34.128 ERROR 7136 --- [http-nio-8080-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 99045
+2021-04-09 12:02:34.130 ERROR 7136 --- [http-nio-8080-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 100947
+2021-04-09 12:02:34.132 ERROR 7136 --- [http-nio-8080-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 100953
+2021-04-09 12:02:34.135 ERROR 7136 --- [http-nio-8080-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 100960
+2021-04-09 12:02:34.137 ERROR 7136 --- [http-nio-8080-exec-3] c.a.druid.pool.DruidAbstractDataSource   : discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, jdbcUrl : jdbc:mysql://localhost:3306/news?serverTimezone=GMT%2B8, lastPacketReceivedIdleMillis : 100978
+2021-04-09 12:02:34.138 DEBUG 7136 --- [http-nio-8080-exec-3] c.z.n.m.U.findByUsernameAndPassword      : ==>  Preparing: select user_id,username,nickname, role_id from n_user where username = ? and password = ?
+2021-04-09 12:02:34.140 DEBUG 7136 --- [http-nio-8080-exec-3] c.z.n.m.U.findByUsernameAndPassword      : ==> Parameters: admin(String), 21232f297a57a5a743894a0e4a801fc3(String)
+2021-04-09 12:02:34.151 DEBUG 7136 --- [http-nio-8080-exec-3] c.z.n.m.U.findByUsernameAndPassword      : <==      Total: 1
+2021-04-09 12:02:34.155  INFO 7136 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Return ------ true
+2021-04-09 12:02:34.155  INFO 7136 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-04-09 12:02:34.155  INFO 7136 --- [http-nio-8080-exec-3] com.zm.news.aspect.LogAspect             : Time Cost            : 43 ms
+2021-04-09 12:02:37.385  INFO 7136 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-04-09 12:02:37.385  INFO 7136 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/index', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toAdmin', requestParams={}}
+2021-04-09 12:02:37.385  INFO 7136 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Return ------ admin/index
+2021-04-09 12:02:37.385  INFO 7136 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-04-09 12:02:37.385  INFO 7136 --- [http-nio-8080-exec-8] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-04-09 12:02:38.096  INFO 7136 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-04-09 12:02:38.096  INFO 7136 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toWelcome', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toWelcome', requestParams={model={}}}
+2021-04-09 12:02:38.098 DEBUG 7136 --- [http-nio-8080-exec-6] com.zm.news.mapper.UserMapper            : Cache Hit Ratio [com.zm.news.mapper.UserMapper]: 0.0
+2021-04-09 12:02:38.099 DEBUG 7136 --- [http-nio-8080-exec-6] com.zm.news.mapper.UserMapper.getCount   : ==>  Preparing: select count(user_id) from n_user where user_status = 0
+2021-04-09 12:02:38.100 DEBUG 7136 --- [http-nio-8080-exec-6] com.zm.news.mapper.UserMapper.getCount   : ==> Parameters: 
+2021-04-09 12:02:38.102 DEBUG 7136 --- [http-nio-8080-exec-6] com.zm.news.mapper.UserMapper.getCount   : <==      Total: 1
+2021-04-09 12:02:38.103 DEBUG 7136 --- [http-nio-8080-exec-6] com.zm.news.mapper.CommentMapper         : Cache Hit Ratio [com.zm.news.mapper.CommentMapper]: 0.0
+2021-04-09 12:02:38.103 DEBUG 7136 --- [http-nio-8080-exec-6] c.zm.news.mapper.CommentMapper.getCount  : ==>  Preparing: select count(comment_id) from n_comment;
+2021-04-09 12:02:38.104 DEBUG 7136 --- [http-nio-8080-exec-6] c.zm.news.mapper.CommentMapper.getCount  : ==> Parameters: 
+2021-04-09 12:02:38.112 DEBUG 7136 --- [http-nio-8080-exec-6] c.zm.news.mapper.CommentMapper.getCount  : <==      Total: 1
+2021-04-09 12:02:38.114 DEBUG 7136 --- [http-nio-8080-exec-6] com.zm.news.mapper.NewsMapper            : Cache Hit Ratio [com.zm.news.mapper.NewsMapper]: 0.16666666666666666
+2021-04-09 12:02:38.115  INFO 7136 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Return ------ admin/welcome
+2021-04-09 12:02:38.115  INFO 7136 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-04-09 12:02:38.115  INFO 7136 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Time Cost            : 19 ms
+2021-04-09 12:02:41.847  INFO 7136 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-04-09 12:02:41.847  INFO 7136 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/admin/toStatics', httpMethod='GET', classMethod='com.zm.news.controller.AdminController.toStatics', requestParams={}}
+2021-04-09 12:02:41.847  INFO 7136 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Return ------ admin/statics/statics-list
+2021-04-09 12:02:41.847  INFO 7136 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-04-09 12:02:41.848  INFO 7136 --- [http-nio-8080-exec-6] com.zm.news.aspect.LogAspect             : Time Cost            : 1 ms
+2021-04-09 12:02:42.359  INFO 7136 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================Start========================
+2021-04-09 12:02:42.361  INFO 7136 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Request : Log{ip='0:0:0:0:0:0:0:1', url='http://localhost:8080/statics/toStaticsList', httpMethod='GET', classMethod='com.zm.news.controller.StaticsController.toStaticsList', requestParams={limit=15, page=1, type=null, statistics=Statistics{id=null, ip='null', requestCount=null, requestDate=null, location=null}}}
+2021-04-09 12:02:42.390 DEBUG 7136 --- [http-nio-8080-exec-7] c.z.n.m.S.findByParams_COUNT             : ==>  Preparing: SELECT count(0) FROM n_statistics
+2021-04-09 12:02:42.390 DEBUG 7136 --- [http-nio-8080-exec-7] c.z.n.m.S.findByParams_COUNT             : ==> Parameters: 
+2021-04-09 12:02:42.400 DEBUG 7136 --- [http-nio-8080-exec-7] c.z.n.m.S.findByParams_COUNT             : <==      Total: 1
+2021-04-09 12:02:42.400 DEBUG 7136 --- [http-nio-8080-exec-7] c.z.n.m.StatisticsMapper.findByParams    : ==>  Preparing: select id, ip, request_count, request_date, location from n_statistics LIMIT ?
+2021-04-09 12:02:42.401 DEBUG 7136 --- [http-nio-8080-exec-7] c.z.n.m.StatisticsMapper.findByParams    : ==> Parameters: 15(Integer)
+2021-04-09 12:02:42.402 DEBUG 7136 --- [http-nio-8080-exec-7] c.z.n.m.StatisticsMapper.findByParams    : <==      Total: 1
+2021-04-09 12:02:42.403  INFO 7136 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Return ------ {msg=操作成功, code=0, data=Page{count=true, pageNum=1, pageSize=15, startRow=0, endRow=15, total=1, pages=1, reasonable=true, pageSizeZero=false}[Statistics{id=1, ip='0:0:0:0:0:0:0:1', requestCount=2, requestDate=Wed Feb 03 08:00:00 CST 2021, location=2}], count=1}
+2021-04-09 12:02:42.403  INFO 7136 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : ===============================End========================
+2021-04-09 12:02:42.403  INFO 7136 --- [http-nio-8080-exec-7] com.zm.news.aspect.LogAspect             : Time Cost            : 44 ms

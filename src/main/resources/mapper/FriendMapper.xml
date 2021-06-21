@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zm.news.mapper.FriendMapper">
+
+    <!--开启二级缓存,使用Ehcache缓存框架-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <select id="findFriendList" resultType="com.zm.news.entity.Friend">
+        select friend_id, friend_name, website, friend_date
+        from n_friend
+    </select>
+
+    <select id="findFriendByFuzzy" resultType="com.zm.news.entity.Friend">
+        select friend_id, friend_name, website, friend_date
+        from n_friend
+        <where>
+            <if test="friendId != null and friendId gte 1">
+                friend_id = #{friendId}
+            </if>
+            <if test="friendName != null and friendName != ''">
+                and friend_name = #{friendName}
+            </if>
+            <if test="friendDate != null">
+                and friend_date = #{friendDate}
+            </if>
+        </where>
+    </select>
+
+    <select id="findByPrimaryKey" resultType="com.zm.news.entity.Friend">
+        select friend_id, friend_name, website, friend_date
+        from n_friend where friend_id = #{friendId};
+    </select>
+
+    <insert id="insertFriend" parameterType="com.zm.news.entity.Friend">
+        insert into n_friend (friend_name, website, friend_date)
+        values (#{friendName}, #{website}, #{friendDate});
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zm.news.entity.Friend">
+        update n_friend
+        <set>
+            <if test="friendName != null and friendName != ''">
+                friend_name = #{friendName},
+            </if>
+            <if test="website != null and website != ''">
+                website = #{website},
+            </if>
+            <if test="friendDate != null">
+                friend_date = #{friendDate}
+            </if>
+        </set>
+        where friend_id = #{friendId};
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="int">
+        delete from n_friend where friend_id = #{friendId}
+    </delete>
+
+    <delete id="deleteByBatch">
+        delete from n_friend where friend_id in
+        <foreach collection="list" item="obj" open="(" separator="," close=")">
+            #{obj.friendId}
+        </foreach>
+    </delete>
+
+    <select id="getCount" resultType="int">
+        select count(friend_id)
+        from n_friend;
+    </select>
+
+</mapper>

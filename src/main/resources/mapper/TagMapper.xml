@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zm.news.mapper.TagMapper">
+
+    <!--开启二级缓存,使用Ehcache缓存框架-->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
+    <select id="findTagList" parameterType="TagVo" resultType="com.zm.news.entity.Tag">
+        select *
+        from n_tag
+        <where>
+            <if test="tagName != null and tagName != ''">
+                and tag_name like concat(concat('%', #{tagName}, '%'))
+            </if>
+            <if test="dateStart != null or dateEnd != null">
+                and tag_date between #{dateStart} and #{dateEnd}
+            </if>
+        </where>
+    </select>
+
+    <select id="findByPrimaryKey" resultType="com.zm.news.entity.Tag">
+        select *
+        from n_tag where tag_id = #{tagId};
+    </select>
+
+    <select id="findByTagName" resultType="com.zm.news.entity.Tag">
+        select *
+        from n_tag where tag_name = #{tagName}
+    </select>
+
+    <select id="findTagByNewsId" resultType="com.zm.news.entity.Tag">
+        select tag_id, tag_name
+        from n_tag where tag_id in (select n_news_tag.tag_id
+        from n_news_tag where news_id = #{newsId});
+    </select>
+
+    <select id="findTagNewsByNewsId" resultType="com.zm.news.entity.Tag">
+        select tag_id
+        from n_news_tag where news_id = #{newsId}
+    </select>
+
+    <insert id="insertTag" parameterType="com.zm.news.entity.Tag">
+        insert into n_tag (tag_name, tag_date)
+        values (#{tagName}, #{tagDate});
+    </insert>
+
+    <insert id="insertNewsTag">
+        insert into n_news_tag (news_id, tag_id)
+        values
+        <foreach collection="param1" item="item" separator=",">
+            (#{param2},#{item})
+        </foreach>
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.zm.news.entity.Tag">
+        update n_tag
+        <set>
+            <if test="tagName != null and tagName != ''">
+                tag_name = #{tagName},
+            </if>
+            <if test="tagDate != null">
+                tag_date = #{tagDate}
+            </if>
+        </set>
+        where tag_id = #{tagId};
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="int">
+        delete from n_tag where tag_id = #{tagId}
+    </delete>
+
+    <delete id="deleteByPrimaryKeys" parameterType="list">
+        delete from n_tag where tag_id in
+        <foreach collection="list" item="item" open="(" separator="," close=")">
+            #{item.tagId}
+        </foreach>
+    </delete>
+
+    <delete id="deleteNewsTagByNewsId" parameterType="int">
+        delete from n_news_tag where news_id = #{newsId}
+    </delete>
+
+    <select id="getCount" resultType="int">
+        select count(tag_id)
+        from n_tag;
+    </select>
+
+</mapper>
